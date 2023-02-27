@@ -1,5 +1,5 @@
 cb_security=['cybersecurity','information-security','blockchain','Cryptocurrency','web3','security']
-data_science=['ai','ml','Deep Learning','nlp','data-science','data-analysis','image-processing']
+data_science=['ai','ml','deep-learning','nlp','data-science','data-analysis','image-processing']
 cloud_comp=['cloud-computing','cloud-services','dev-ops']
 app_dev=['android','app-development','flutter']
 web_dev=['web-development','Software-Development','front-end-development']
