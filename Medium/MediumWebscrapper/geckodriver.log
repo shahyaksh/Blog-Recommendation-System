@@ -1,0 +1,693 @@
+1677430471665	geckodriver	INFO	Listening on 127.0.0.1:65445
+1677430474739	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "65446" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileDSdvDk"
+1677430475182	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677430475188	Marionette	INFO	Listening on port 65453
+Read port: 65453
+WebDriver BiDi listening on ws://127.0.0.1:65446
+1677430475352	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileDSdvDk\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:65446/devtools/browser/e5854081-d5fa-42cd-92cb-b6bb52f33d48
+1677430638110	Marionette	INFO	Stopped listening on port 65453
+Dynamically enable window occlusion 1
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+e-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofilernmONQ"
+1677430551688	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677430551693	Marionette	INFO	Listening on port 49191
+Read port: 49191
+WebDriver BiDi listening on ws://127.0.0.1:49181
+1677430551870	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofilernmONQ\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:49181/devtools/browser/265d7c89-675f-4a11-9c38-4724e5983da2
+1677430639444	Marionette	INFO	Stopped listening on port 49191
+Dynamically enable window occlusion 1
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1677430744123	geckodriver	INFO	Listening on 127.0.0.1:49267
+1677430747182	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "49268" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileQMNUFo"
+1677430747765	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677430747769	Marionette	INFO	Listening on port 49277
+Read port: 49277
+WebDriver BiDi listening on ws://127.0.0.1:49268
+1677430747950	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileQMNUFo\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:49268/devtools/browser/b60a37c4-b485-4ef1-af8d-eefb7782aee1
+1677430954170	Marionette	INFO	Stopped listening on port 49277
+Dynamically enable window occlusion 1
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+e-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofile3CN2e1"
+1677430894642	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677430894647	Marionette	INFO	Listening on port 49323
+Read port: 49323
+WebDriver BiDi listening on ws://127.0.0.1:49316
+1677430894790	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofile3CN2e1\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:49316/devtools/browser/fb57b5eb-b32f-458e-8412-ca761ab85718
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+1677430962461	Marionette	INFO	Stopped listening on port 49323
+Dynamically enable window occlusion 1
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+e-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileNa043G"
+1677430942796	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677430942802	Marionette	INFO	Listening on port 49395
+Read port: 49395
+WebDriver BiDi listening on ws://127.0.0.1:49388
+1677430942950	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileNa043G\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:49388/devtools/browser/c74a4aca-9cf2-4e0e-816a-47ffce6c822f
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: , line 0: NotFoundError: Could not move source file(C:\Users\yaksh\AppData\Local\Temp\rust_mozprofileNa043G\bookmarkbackups\bookmarks-2023-02-26_11_CE7LM+J-1GoqupodoqaCfA==.jsonlz4) because it does not exist
+1677463605162	Marionette	INFO	Stopped listening on port 49395
+Dynamically enable window occlusion 1
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+e	INFO	Listening on port 49763
+Read port: 49763
+WebDriver BiDi listening on ws://127.0.0.1:49756
+1677431410843	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofile3ta2RP\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:49756/devtools/browser/a7df9d8c-3b8c-4158-917b-3440c59ba828
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1677463605330	Marionette	INFO	Stopped listening on port 49763
+Dynamically enable window occlusion 1
+ng command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "49990" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofilevOS2MC"
+1677463053820	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677463053824	Marionette	INFO	Listening on port 49999
+Read port: 49999
+WebDriver BiDi listening on ws://127.0.0.1:49990
+1677463053983	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofilevOS2MC\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:49990/devtools/browser/bd56d0f6-5f6a-40a6-ab40-6787c16be86b
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+[GFX1-]: Unrecognized feature ACCELERATED_CANVAS2D
+1677463604609	Marionette	INFO	Stopped listening on port 49999
+Dynamically enable window occlusion 1
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofilebbhG8h"
+1677463112930	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677463112935	Marionette	INFO	Listening on port 50069
+Read port: 50069
+WebDriver BiDi listening on ws://127.0.0.1:50062
+1677463113116	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofilebbhG8h\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50062/devtools/browser/8e701996-cd7f-4a59-91f4-e300381553b8
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+[GFX1-]: Unrecognized feature ACCELERATED_CANVAS2D
+1677463604353	Marionette	INFO	Stopped listening on port 50069
+Dynamically enable window occlusion 1
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileJdJQdl"
+1677463224527	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677463224533	Marionette	INFO	Listening on port 50144
+Read port: 50144
+WebDriver BiDi listening on ws://127.0.0.1:50137
+1677463224697	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileJdJQdl\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50137/devtools/browser/1c0c0d65-65a9-4a03-bd5b-dad53a76ff36
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+1677463604222	Marionette	INFO	Stopped listening on port 50144
+Dynamically enable window occlusion 1
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+e-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileHBf5Dy"
+1677463430210	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677463430216	Marionette	INFO	Listening on port 50238
+Read port: 50238
+WebDriver BiDi listening on ws://127.0.0.1:50231
+1677463430395	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileHBf5Dy\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50231/devtools/browser/ea1c90cf-f7d7-4865-8898-b497886b78cd
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+1677463604008	Marionette	INFO	Stopped listening on port 50238
+Dynamically enable window occlusion 1
+ng command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50305" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofilediXDiw"
+1677463469738	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677463469744	Marionette	INFO	Listening on port 50312
+Read port: 50312
+WebDriver BiDi listening on ws://127.0.0.1:50305
+1677463469922	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofilediXDiw\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50305/devtools/browser/de613288-2a47-4140-8726-6fd9faf49edf
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+1677463603884	Marionette	INFO	Stopped listening on port 50312
+Dynamically enable window occlusion 1
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+e-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofilebCsVge"
+1677463549368	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677463549374	Marionette	INFO	Listening on port 50389
+Read port: 50389
+WebDriver BiDi listening on ws://127.0.0.1:50382
+1677463549550	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofilebCsVge\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50382/devtools/browser/269e9d9c-4e81-418b-acdb-63d20aeeba43
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+1677463603800	Marionette	INFO	Stopped listening on port 50389
+Dynamically enable window occlusion 1
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1677463649351	geckodriver	INFO	Listening on 127.0.0.1:50446
+1677463652416	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50447" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileB2TomM"
+1677463652937	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677463652944	Marionette	INFO	Listening on port 50454
+Read port: 50454
+WebDriver BiDi listening on ws://127.0.0.1:50447
+1677463653132	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileB2TomM\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50447/devtools/browser/2b8d016b-bce2-4fe7-a4f4-e59d0f28d7b7
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+[GFX1-]: Unrecognized feature ACCELERATED_CANVAS2D
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1677465554737	Marionette	INFO	Stopped listening on port 50454
+Dynamically enable window occlusion 1
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+ileMVKvWF"
+1677463895065	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677463895077	Marionette	INFO	Listening on port 50511
+Read port: 50511
+WebDriver BiDi listening on ws://127.0.0.1:50504
+1677463895432	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileMVKvWF\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50504/devtools/browser/b806d671-a13a-4c00-8039-4fd1dcca4cef
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+[GFX1-]: Unrecognized feature ACCELERATED_CANVAS2D
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1677465554847	Marionette	INFO	Stopped listening on port 50511
+Dynamically enable window occlusion 1
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1677465850537	geckodriver	INFO	Listening on 127.0.0.1:51727
+1677465853600	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51728" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofilexeuF7R"
+1677465854084	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677465854089	Marionette	INFO	Listening on port 51735
+Read port: 51735
+WebDriver BiDi listening on ws://127.0.0.1:51728
+1677465854250	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofilexeuF7R\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51728/devtools/browser/8299e54a-a770-46b5-8ae0-68157a844bf1
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+[GFX1-]: Unrecognized feature ACCELERATED_CANVAS2D
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1677471831843	Marionette	INFO	Stopped listening on port 51735
+Dynamically enable window occlusion 1
+51801" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileTpHAwH"
+1677465925855	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677465925860	Marionette	INFO	Listening on port 51808
+Read port: 51808
+WebDriver BiDi listening on ws://127.0.0.1:51801
+1677465926020	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileTpHAwH\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51801/devtools/browser/8bd14dba-dca2-44f5-af7b-70a9a0931249
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+[GFX1-]: Unrecognized feature ACCELERATED_CANVAS2D
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1677471831864	Marionette	INFO	Stopped listening on port 51808
+Dynamically enable window occlusion 1
+51925" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofiledKOe50"
+1677465963213	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677465963218	Marionette	INFO	Listening on port 51932
+Read port: 51932
+WebDriver BiDi listening on ws://127.0.0.1:51925
+1677465963390	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofiledKOe50\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51925/devtools/browser/de52faba-958e-400a-94ce-71f18e582663
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+[GFX1-]: Unrecognized feature ACCELERATED_CANVAS2D
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1677471831842	Marionette	INFO	Stopped listening on port 51932
+Dynamically enable window occlusion 1
+51989" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileSOS96c"
+1677466020915	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677466020920	Marionette	INFO	Listening on port 51996
+Read port: 51996
+WebDriver BiDi listening on ws://127.0.0.1:51989
+1677466021084	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileSOS96c\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51989/devtools/browser/b51ada01-b95b-4f80-a734-0852a484075e
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+[GFX1-]: Unrecognized feature ACCELERATED_CANVAS2D
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1677471831937	Marionette	INFO	Stopped listening on port 51996
+Dynamically enable window occlusion 1
+52058" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileyKMBpV"
+1677466143453	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677466143459	Marionette	INFO	Listening on port 52065
+Read port: 52065
+WebDriver BiDi listening on ws://127.0.0.1:52058
+1677466143647	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileyKMBpV\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52058/devtools/browser/897ded6b-3a6e-4f7c-b259-70fec097ffac
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: , line 0: NotFoundError: Could not move source file(C:\Users\yaksh\AppData\Local\Temp\rust_mozprofileyKMBpV\bookmarkbackups\bookmarks-2023-02-27.jsonlz4) because it does not exist
+[GFX1-]: Unrecognized feature ACCELERATED_CANVAS2D
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 572: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1677471825870	Marionette	INFO	Stopped listening on port 52065
+Dynamically enable window occlusion 1
+sers\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileh2Hap1"
+1677471149010	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677471149018	Marionette	INFO	Listening on port 52854
+Read port: 52854
+WebDriver BiDi listening on ws://127.0.0.1:52845
+1677471149219	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileh2Hap1\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52845/devtools/browser/fc1b86b7-42fa-4bd9-b823-e50fdad217f7
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+[GFX1-]: Unrecognized feature ACCELERATED_CANVAS2D
+1677471831923	Marionette	INFO	Stopped listening on port 52854
+Dynamically enable window occlusion 1
+efox.exe" "--marionette" "--remote-debugging-port" "53047" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofilexM7dbX"
+1677471274589	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677471274595	Marionette	INFO	Listening on port 53055
+Read port: 53055
+WebDriver BiDi listening on ws://127.0.0.1:53047
+1677471274784	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofilexM7dbX\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53047/devtools/browser/f43e4e56-b978-4994-9d73-3696637560b6
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+[GFX1-]: Unrecognized feature ACCELERATED_CANVAS2D
+1677471812711	Marionette	INFO	Stopped listening on port 53055
+Dynamically enable window occlusion 1
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofile1vKMZz"
+1677471367524	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677471367530	Marionette	INFO	Listening on port 53255
+Read port: 53255
+WebDriver BiDi listening on ws://127.0.0.1:53243
+1677471367706	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofile1vKMZz\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53243/devtools/browser/55f586ad-0060-4e5b-bdbf-d9f1755f5053
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+[GFX1-]: Unrecognized feature ACCELERATED_CANVAS2D
+1677471830670	Marionette	INFO	Stopped listening on port 53255
+Dynamically enable window occlusion 1
+efox.exe" "--marionette" "--remote-debugging-port" "53509" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileukDgfN"
+1677471560055	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677471560066	Marionette	INFO	Listening on port 53582
+Read port: 53582
+WebDriver BiDi listening on ws://127.0.0.1:53509
+1677471560267	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileukDgfN\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53509/devtools/browser/2913b38c-c49f-422f-bb98-39ef18f27151
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+1677471831264	Marionette	INFO	Stopped listening on port 53582
+Dynamically enable window occlusion 1
+ng command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "53696" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileCaVq2L"
+1677471625993	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677471625998	Marionette	INFO	Listening on port 53704
+Read port: 53704
+WebDriver BiDi listening on ws://127.0.0.1:53696
+1677471626179	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileCaVq2L\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53696/devtools/browser/4bbb5d02-7bb1-4516-bfca-a10449c0f05a
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+1677471830792	Marionette	INFO	Stopped listening on port 53704
+Dynamically enable window occlusion 1
+ng command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "53874" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileHzNA1o"
+1677471702003	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677471702009	Marionette	INFO	Listening on port 53883
+Read port: 53883
+WebDriver BiDi listening on ws://127.0.0.1:53874
+1677471702201	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileHzNA1o\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53874/devtools/browser/7db4b886-6fec-4bc0-a061-5db85cdc591a
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+1677471830424	Marionette	INFO	Stopped listening on port 53883
+Dynamically enable window occlusion 1
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+e-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileMSgVkm"
+1677471766414	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677471766420	Marionette	INFO	Listening on port 54062
+Read port: 54062
+WebDriver BiDi listening on ws://127.0.0.1:54033
+1677471766625	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\yaksh\\AppData\\Local\\Temp\\rust_mozprofileMSgVkm\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:54033/devtools/browser/92780fc5-74b6-4e0b-9c33-425998793f3b
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #425; visit https://reactjs.org/docs/error-decoder.html?invariant=425 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://cdn-client.medium.com/lite/static/js/4399.f402ae11.js, line 2: Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+1677471830361	Marionette	INFO	Stopped listening on port 54062
+Dynamically enable window occlusion 1
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
