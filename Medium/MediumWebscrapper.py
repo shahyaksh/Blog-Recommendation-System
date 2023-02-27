@@ -5,7 +5,7 @@ from datetime import datetime
 from pytz import timezone
 import json
 All_topics=['Select Topics','cybersecurity','information-security','blockchain','Cryptocurrency','web3','security',
-            'ai','ml','Deep Learning','nlp','data-science','data-analysis','image-processing',
+            'ai','ml','deep-learning','nlp','data-science','data-analysis','image-processing',
             'cloud-computing','cloud-services','dev-ops',
             'android','app-development','flutter',
             'web-development','Software-Development','front-end-development']
