@@ -45,8 +45,9 @@ for article in All_Articals:
         content_info=source[4].find_all('div')
     blog['title']=content_info[0].text
     blog['content']=content_info[1].text
-    blog['image']=source[len(source)-3].find('img')['src']
+    # blog['image']=source[len(source)-3].find('img')['src']
     blogs.append(blog)
+    print(source)
 
 print(len(blogs))
 print(blogs)
