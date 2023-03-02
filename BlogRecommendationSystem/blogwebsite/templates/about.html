@@ -1,4 +1,40 @@
-{% extends "layout.html" %}
-{% block content %}
-    <h1>About Us</h1>
-{% endblock content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About us</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+
+<body>
+    {% extends "layout.html" %}
+    {% block content %}
+
+    <div class="section">
+        <div class="container">
+            <div class="content-section">
+                <div class="title">
+                    <h1>About us</h1>
+                </div>
+                <div class="content">
+                    <p>
+                        The main objective of the automated Recommendation System is to simplify the task of discovering blogs that may be of interest to the user. This is accomplished by utilizing a method that recommends blogs based on the user's search history and current preferences. The system includes a vast array of blogs on various topics, which saves the user time.
+                    </p>
+                </div>
+                <div class="social">
+                    <a href="https://www.linkedin.com/in/mann-desai-2962a11bb" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://instagram.com/_.mann_.18?igshid=ZDdkNTZiNTM=" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://twitter.com/manndesai03?t=4_w-cT_tqJVQZW_qbxsqZg&s=09" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock content %}
+
+</body>
+
+</html>

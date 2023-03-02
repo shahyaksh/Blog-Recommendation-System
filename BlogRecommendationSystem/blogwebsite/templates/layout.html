@@ -15,6 +15,15 @@
     {% else %}
         <title>Flask Blog</title>
     {% endif %}
+
+    <style>
+      #m1{
+        display: block;
+      }
+      #m2{
+        display: none;
+      }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -24,37 +33,33 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
+          
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-2">
               <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
               <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
               
-              {% if session["name"] != None %}
-                <a class="nav-item nav-link" href="{{ url_for('new_post') }}">Post</a>
-                <a class="nav-item nav-link" href="{{ url_for('account') }}">Account</a>
+              {% if "name" in session %}
+                <a class="nav-item nav-link" id="m1" href="{{ url_for('recommend') }}">Recommendation</a>
+                <a class="nav-item nav-link" id="m1" href="{{ url_for('account') }}">Account</a>
+                {% else %}
+                <a class="nav-item nav-link" id="m2" href="{{ url_for('recommend') }}">Recommendation</a>
+                <a class="nav-item nav-link" id="m2" href="{{ url_for('account') }}">Account</a>
               {% endif %}
             </div>
-            <div class="input-group">
-              <div class="form-outline">
-                <input type="search" id="form1" class="form-control" placeholder="Search.." />
-                <label class="form-label" for="form1">Search</label>
-              </div>
-              <button type="button" id="Search" class="btn btn-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                </svg>
-              </button>
-            </div>
+            
             <!-- Navbar Right Side -->
-            <div class="navbar-nav">
-              {% if session["name"] != None %}
-                <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
-              {% else %}
-                <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
-              {% endif %}
-            </div>
+            
           </div>
-        </div>
+
+          
+          
+          <div class="navbar-nav">
+            {% if "name" in session %}
+              <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+            {% else %}
+              <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
+            {% endif %}
       </nav>
     </header>
     <main role="main" class="container">
