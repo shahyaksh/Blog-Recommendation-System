@@ -10,9 +10,9 @@ import smtplib
 app = Flask(__name__)
 mysql = MySQL()
 bcrypt = Bcrypt(app)
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'
-app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = ''
+app.config['MYSQL_DATABASE_HOST'] = 'blog-recommedation-system.cu9zz7jlsnla.ap-south-1.rds.amazonaws.com'
+app.config['MYSQL_DATABASE_USER'] = 'yaksh'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'Yaksh_170802'
 app.config['MYSQL_DATABASE_DB'] = 'blog_recommendation_system'
 app.config["MAIL_SERVER"] = 'smtp.gmail.com'
 app.config["MAIL_PORT"] = 587
