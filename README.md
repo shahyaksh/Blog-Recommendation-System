@@ -7,11 +7,11 @@
 
 <code>uvicorn app.main:app --reload</code>
 
-# To See the Documentation of the API or to Test the endpoints:
+# To See the Documentation of the API or to test the endpoints:
   
   <code>http://127.0.0.1:8000/docs</code>
 
-# API Endpoints and the Description of what they do:
+# API endpoints and the description of what they do:
 
 ## 1) Endpoints with GET Requests
 
