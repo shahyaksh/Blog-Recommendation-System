@@ -3,8 +3,8 @@ import time
 from datetime import datetime
 while True:
     try:
-        mydb = SqlConnector.connect(host="localhost",
-                                    user="root",
+        mydb = SqlConnector.connect(host="blog-recommedation-system.cu9zz7jlsnla.ap-south-1.rds.amazonaws.com",
+                                    user="yaksh",
                                     password="Yaksh_170802", database="blog_recommendation_system")
         cursor = mydb.cursor(buffered=True)
         print("Connection to Database Successful")
