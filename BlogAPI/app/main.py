@@ -73,8 +73,15 @@ def get_blogs_not_to_consider(user_id:int):
 async def root():
     return {"message": "Welcome to the Blog API Created by Yaksh Shah"}
 
+@app.get('/blogs')
+async def get_blogs_for_home_before_login():
+    cursor.execute(f""" select * from blogs where blog_id order by rand() limit 50""")
+    blogs_list = cursor.fetchall()
+    blog_json = get_blogs_in_json_format(blogs_list)
+    return blog_json
+
 @app.get('/blogs/{user_id}')
-async def get_blogs(user_id:int):
+async def get_blogs_for_home_after_login(user_id:int):
     blog_id_not_to_consider_tuple=get_blogs_not_to_consider(user_id)
     if blog_id_not_to_consider_tuple is not None:
         cursor.execute(f""" select * from blogs where blog_id order by rand() limit 50""")
