@@ -38,15 +38,18 @@ def get_blogs_in_json_format(blogs_list: list):
         blog_dict = {}
     return blog_json
 
-def get_blogs_to_not_consider(user_id:int):
+def get_blogs_not_to_consider(user_id:int):
+
+    # get all blogs liked by the user
     cursor.execute("select blog_id from likes where user_id=%s", (user_id,))
     liked_blog_list = cursor.fetchall()
+    #get all blogs that are added to favourites by the user
     cursor.execute("select blog_id from favourites where user_id=%s", (user_id,))
     favourites_blog_list = cursor.fetchall()
-    blog_list = None
+
     blog_id_not_to_consider_list = []
     blog_id_not_to_consider_tuple = ()
-    #check for blogs which are not liked or added to favourites by the user
+    #check for blogs which are liked or added to favourites by the user and form a tuple
     if liked_blog_list is None and favourites_blog_list is None:
         blog_id_not_to_consider_tuple=None
     elif liked_blog_list is not None and favourites_blog_list is not None:
@@ -62,7 +65,7 @@ def get_blogs_to_not_consider(user_id:int):
         for fav_blog_id in favourites_blog_list:
             if fav_blog_id not in blog_id_not_to_consider_list:
                 blog_id_not_to_consider_list.append(fav_blog_id[0])
-    if blog_id_not_to_consider_tuple is not None:
+    if blog_id_not_to_consider_list is not None:
         blog_id_not_to_consider_tuple = tuple(blog_id_not_to_consider_list)
     return blog_id_not_to_consider_tuple
 
@@ -72,7 +75,7 @@ async def root():
 
 @app.get('/blogs/{user_id}')
 async def get_blogs(user_id:int):
-    blog_id_not_to_consider_tuple=get_blogs_to_not_consider(user_id)
+    blog_id_not_to_consider_tuple=get_blogs_not_to_consider(user_id)
     if blog_id_not_to_consider_tuple is not None:
         cursor.execute(f""" select * from blogs where blog_id order by rand() limit 50""")
     else:
