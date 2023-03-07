@@ -2,36 +2,22 @@ import time
 import os
 from itsdangerous import URLSafeTimedSerializer as Serializer
 from flask import Flask, session
-from flaskext.mysql import MySQL
 from flask_bcrypt import Bcrypt
 from flask_mail import Mail
+from flaskext.mysql import MySQL
+import time
 import smtplib
+import requests
 
+api_link = "http://127.0.0.1:8000"
 app = Flask(__name__)
-mysql = MySQL()
 bcrypt = Bcrypt(app)
-app.config['MYSQL_DATABASE_HOST'] = 'blog-recommedation-system.cu9zz7jlsnla.ap-south-1.rds.amazonaws.com'
-app.config['MYSQL_DATABASE_USER'] = 'yaksh'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'Yaksh_170802'
-app.config['MYSQL_DATABASE_DB'] = 'blog_recommendation_system'
 app.config["MAIL_SERVER"] = 'smtp.gmail.com'
 app.config["MAIL_PORT"] = 587
 app.config["MAIL_USE_TLS"] = True
 app.config["MAIL_USERNAME"] = os.environ.get("EMAIL_USER")
 app.config["MAIL_PASSWORD"] = os.environ.get("EMAIL_PASS")
 
-
-while True:
-    try:
-        mysql.init_app(app)
-        break
-    except Exception as error:
-        print("Connection to Database failed")
-        print(error)
-        time.sleep(2)
-
-conn = mysql.connect()
-cursor = conn.cursor()
 mail = Mail(app)
 
 class User_Token:
@@ -47,8 +33,7 @@ class User_Token:
             user_id = s.loads(token)['user_id']
         except:
             return None
-        cursor.execute(''' select * from user_profile where user_id=%s ''', (user_id,))
-        user_details = cursor.fetchone()
+        user_details = requests.get(f"{api_link}/user/details/id/{user_id}").json()
         return user_details
 
 

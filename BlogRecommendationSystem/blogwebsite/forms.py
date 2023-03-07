@@ -1,14 +1,13 @@
 from cgitb import reset
 from unittest import result
+import requests
 from flask import session
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
-from wtforms import StringField, PasswordField, SubmitField, BooleanField,TextAreaField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-from blogwebsite import mysql
-
-conn = mysql.connect()
-cursor = conn.cursor()
+from blogwebsite import api_link
+import requests
 
 
 class RegistrationForm(FlaskForm):
@@ -19,17 +18,13 @@ class RegistrationForm(FlaskForm):
     submit = SubmitField('Sign Up')
 
     def validate_username(self, username):
-        cursor.execute(''' SELECT user_name from User_Profile 
-                                        where user_name=%s''', [username.data])
-        result = cursor.fetchone()
-        if result:
+        result = requests.get(f"{api_link}/name/{username.data}").text
+        if result == "not unique":
             raise ValidationError('This Username already exists.Please select a different one')
 
     def validate_email(self, email):
-        cursor.execute(''' SELECT user_email from User_Profile 
-                                        where user_email=%s''', [email.data])
-        result = cursor.fetchone()
-        if result:
+        result = requests.get(f"{api_link}/email/{email.data}").text
+        if result == "not unique":
             raise ValidationError('An account using the same Email already exists.Please select a different one')
 
 
@@ -38,6 +33,7 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     remember = BooleanField('Remember Me')
     submit = SubmitField("Login")
+
 
 class UpdateAccountForm(FlaskForm):
     username = StringField('Username',
@@ -48,19 +44,15 @@ class UpdateAccountForm(FlaskForm):
     submit = SubmitField('Update')
 
     def validate_username(self, username):
-        if session["name"]!=username.data:
-            cursor.execute(''' SELECT user_name from User_Profile 
-                                            where user_name=%s''', [username.data])
-            result = cursor.fetchone()
-            if result:
+        if session["name"] != username.data:
+            result = requests.get(f"{api_link}/name/{username.data}").text
+            if result == "not unique":
                 raise ValidationError('This Username already exists.Please select a different one')
 
     def validate_email(self, email):
-        if session["email"]!=email.data:
-            cursor.execute(''' SELECT user_email from User_Profile 
-                                            where user_email=%s''', [email.data])
-            result = cursor.fetchone()
-            if result:
+        if session["email"] != email.data:
+            result = requests.get(f"{api_link}/email/{email.data}").text
+            if result == "not unique":
                 raise ValidationError('An account using the same Email already exists.Please select a different one')
 
 
@@ -70,10 +62,8 @@ class RequestResetForm(FlaskForm):
     submit = SubmitField('Request Password Reset')
 
     def validate_email(self, email):
-        cursor.execute(''' SELECT user_email from User_Profile 
-                                            where user_email=%s''', [email.data])
-        result = cursor.fetchone()
-        if result is None:
+        result = requests.get(f"{api_link}/email/{email.data}").text
+        if result == "unique":
             raise ValidationError('There is no account with that email. You must register first.')
 
 
@@ -83,12 +73,14 @@ class ResetPasswordForm(FlaskForm):
                                      validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Reset Password')
 
+
 class PostForm(FlaskForm):
-    title = StringField('Title',validators=[DataRequired()])
-    content = TextAreaField('Content',validators=[DataRequired()])
-    tags = StringField('Tags',validators=[DataRequired()])
+    title = StringField('Title', validators=[DataRequired()])
+    content = TextAreaField('Content', validators=[DataRequired()])
+    tags = StringField('Tags', validators=[DataRequired()])
     submit = SubmitField('Post')
 
+
 class Comment(FlaskForm):
-    content = TextAreaField('Content',validators=[DataRequired()])
+    content = TextAreaField('Content', validators=[DataRequired()])
     submit = SubmitField('Comment')
