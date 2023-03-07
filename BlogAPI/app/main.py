@@ -73,6 +73,106 @@ def get_blogs_not_to_consider(user_id:int):
 async def root():
     return {"message": "Welcome to the Blog API Created by Yaksh Shah"}
 
+@app.post('/register/name/{user_name}/email/{user_email}/password/{user_password}')
+async def register_user(user_name:str,user_email:str,user_password:str):
+    user_query = ''' insert into user_profile(user_name,user_email,user_password,user_pic)
+                        values(%s,%s,%s,%s) '''
+    user_info = (user_name,user_email,user_password,'default_profile_pic.jpg')
+    # execute the query
+    cursor.execute(user_query, user_info)
+    mydb.commit()
+    return "User Registeration Completed"
+
+@app.get('/login/email/{user_email}')
+async def user_login(user_email:str):
+    cursor.execute(''' select user_id,user_name,user_email,user_password from user_profile 
+                                    where user_email=%s''',
+                   [user_email])
+    resp = cursor.fetchone()
+    if resp is not None:
+        user_details={'user_id':resp[0],'user_name':resp[1],'user_email':resp[2],'user_pass':resp[3],"user_res":"Found"}
+        return user_details
+    else:
+        return {"user_res":"Not Found"}
+
+@app.post('/update/name/{user_name}/id/{user_id}')
+async def update_user_name(user_name:str,user_id:int):
+    cursor.execute(""" update user_profile set user_name=%s where user_id=%s""",
+                   [user_name, user_id])
+    # execute the query
+    mydb.commit()
+    return "User Name Updated"
+
+@app.post('/update/email/{user_email}/id/{user_id}')
+async def update_user_email(user_email:str,user_id:int):
+    cursor.execute(""" update user_profile set user_email=%s where user_id=%s""",
+                   [user_email, user_id])
+    # execute the query
+    mydb.commit()
+    return "User Email Updated"
+
+@app.post('/update/image/{user_pic}/id/{user_id}')
+async def update_user_profile_pic(user_pic:str,user_id:int):
+    cursor.execute(""" update user_profile set user_pic=%s where user_id=%s""",
+                   [user_pic, user_id])
+    # execute the query
+    mydb.commit()
+    return "User Profile Pic Updated"
+
+@app.post('/update/user/id/{user_id}/password/{user_pass}')
+async def update_user_account_password(user_pass:str,user_id:int):
+    cursor.execute(""" update user_profile set user_password=%s where user_id=%s""",
+                   [user_pass, user_id])
+    # execute the query
+    mydb.commit()
+    return "User Account Password Updated"
+
+
+@app.get('/name/{user_name}')
+async def verify_user_name(user_name:str):
+    cursor.execute(''' SELECT user_name from user_profile 
+                                    where user_name=%s''', [user_name])
+    result = cursor.fetchone()
+    if result:
+        return "unique"
+    else:
+        return "not unique"
+    return result
+
+
+@app.get('/email/{user_email}')
+async def verify_user_email(user_email:str):
+    cursor.execute(''' SELECT user_email from user_profile 
+                                    where user_email=%s''', [user_email])
+    result = cursor.fetchone()
+    if result:
+        return "not unique"
+    else:
+        return "unique"
+    return result
+
+
+@app.get('/image/id/{user_id}')
+async def get_user_profile_pic(user_id:int):
+    cursor.execute(""" select user_pic from user_profile where user_id=%s""", [user_id])
+    resp = cursor.fetchone()
+    user_img = {"user_img":resp[0]}
+    return user_img
+
+@app.get('/id/email/{user_email}')
+async def get_user_id_by_user_email(user_email:str):
+    cursor.execute(""" select user_id from user_profile where user_email=%s""", [user_email])
+    resp = cursor.fetchone()
+    user_detail = {"user_id":resp[0]}
+    return user_detail
+
+@app.get('/user/details/id/{user_id}')
+async def get_user_details(user_id:int):
+    cursor.execute(""" select * from user_profile where user_id=%s""", [user_id])
+    resp = cursor.fetchone()
+    user_details = {"user_id":resp[0],"user_name":resp[1],"user_email":resp[2]}
+    return user_details
+
 @app.get('/blogs')
 async def get_blogs_for_home_before_login():
     cursor.execute(f""" select * from blogs where blog_id order by rand() limit 50""")
@@ -142,6 +242,8 @@ async def unlike_blog(user_id:int,blog_id:int):
     cursor.execute(""" delete from likes where user_id=%s and blog_id=%s""",(user_id,blog_id))
     mydb.commit()
     return "unliked"
+
+
 @app.post('/favourites/user/{user_id}/blog/{blog_id}')
 async def add_blog_to_favourites(user_id:int,blog_id:int):
     cursor.execute("""insert into favourites(user_id,blog_id)values(%s,%s)""",[user_id,blog_id])
