@@ -1,20 +1,13 @@
 import os
 import secrets
-from calendar import week
 from datetime import timedelta
 import requests
-from itsdangerous import TimedSerializer as Serializer
 from flask import render_template, url_for, flash, redirect, session, request
 from PIL import Image
-from blogwebsite.forms import RegistrationForm, LoginForm, UpdateAccountForm, RequestResetForm, ResetPasswordForm, \
-    PostForm
-from blogwebsite import app,bcrypt, User_Token, mail,api_link
+from blogwebsite.forms import RegistrationForm, LoginForm, UpdateAccountForm, RequestResetForm, ResetPasswordForm
+from blogwebsite import app, User_Token, mail,api_link
 from flask_mail import Message
 import hashlib
-
-
-
-# code to store hashed_password in the database
 
 
 app.secret_key = "579162fdrfughhxtds4rd886fjur65edfg"

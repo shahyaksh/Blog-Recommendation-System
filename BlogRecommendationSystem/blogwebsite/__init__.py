@@ -1,11 +1,8 @@
-import time
 import os
 from itsdangerous import URLSafeTimedSerializer as Serializer
-from flask import Flask, session
+from flask import Flask
 from flask_bcrypt import Bcrypt
 from flask_mail import Mail
-from flaskext.mysql import MySQL
-import time
 import smtplib
 import requests
 
