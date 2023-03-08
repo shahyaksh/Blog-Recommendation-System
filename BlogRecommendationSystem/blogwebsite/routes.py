@@ -7,7 +7,7 @@ from PIL import Image
 from blogwebsite.forms import RegistrationForm, LoginForm, UpdateAccountForm, RequestResetForm, ResetPasswordForm
 from blogwebsite import app, User_Token, mail,api_link
 from flask_mail import Message
-import hashlib
+from ProtectUserData import hash_user_pass
 
 
 app.secret_key = "579162fdrfughhxtds4rd886fjur65edfg"
@@ -46,11 +46,8 @@ def register():
     if form.validate_on_submit():
         user_name = form.username.data
         user_email = form.email.data
-        password=form.password.data
-        password_bytes = password.encode('utf-8')
-        hash_algorithm = hashlib.sha256()
-        hash_algorithm.update(password_bytes)
-        hashed_password = hash_algorithm.hexdigest()
+        user_pass=form.password.data
+        hashed_password = hash_user_pass.get_password_hash(user_pass)
         resp = requests.post(f"{api_link}/register/name/{user_name}/email/{user_email}/password/{hashed_password}")
         message = resp.text
         flash(f'Your account has been created now you can log in', 'success')
@@ -66,11 +63,9 @@ def login():
     elif form.validate_on_submit():
         user_email = form.email.data
         user_details = requests.get(f"{api_link}/login/email/{user_email}").json()
-        password = form.password.data
-        password_bytes = password.encode('utf-8')
-        hash_algorithm = hashlib.sha256()
-        hash_algorithm.update(password_bytes)
-        hashed_password = hash_algorithm.hexdigest()
+        user_pass=form.password.data
+        hashed_password = hash_user_pass.get_password_hash(user_pass)
+
         if user_details['user_res'] == "Not Found":
             flash("User doesn't exist please register yourself first !!", 'danger')
             return redirect(url_for('register'))
@@ -176,11 +171,8 @@ def reset_token(token):
         return redirect(url_for('reset_request'))
     form = ResetPasswordForm()
     if form.validate_on_submit():
-        password=form.password.data
-        password_bytes = password.encode('utf-8')
-        hash_algorithm = hashlib.sha256()
-        hash_algorithm.update(password_bytes)
-        hashed_password = hash_algorithm.hexdigest()
+        user_pass=form.password.data
+        hashed_password = hash_user_pass.get_password_hash(user_pass)
         res=requests.post(f'{api_link}/update/user/id/{user["user_id"]}/password/{hashed_password}').text
         print("Password Updated")
         flash('Your password has been updated! You are now able to log in', 'info')
