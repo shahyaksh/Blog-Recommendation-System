@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException, status, Response
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import mysql.connector as SqlConnector
 import time
@@ -19,6 +20,15 @@ while True:
         time.sleep(2)
 
 app = FastAPI()
+origins = ["*"]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 def get_blogs_in_json_format(blogs_list: list):
     blog_json = []
     for blog in blogs_list:
@@ -197,20 +207,23 @@ async def get_recommended_blogs(user_id:int):
 
 @app.get('/like/blogs/{user_id}')
 async def get_liked_blogs(user_id:int):
-    cursor.execute("select blog_id from likes where user_id=%s", (user_id,))
+    cursor.execute("""select blog_id from likes where user_id=%s""", (user_id,))
     liked_blogs=cursor.fetchall()
     blog_id_tuple=()
     blog_id_list=[]
-    if liked_blogs is not None:
+    if liked_blogs != []:
+
         for id in liked_blogs:
             blog_id_list.append(id[0])
+            print(blog_id_list)
         blog_id_tuple=tuple(blog_id_list)
+        print(blog_id_tuple)
         cursor.execute(f""" select * from blogs where blog_id in {blog_id_tuple}""")
         blogs_list = cursor.fetchall()
         blog_json = get_blogs_in_json_format(blogs_list)
         return blog_json
     else:
-        return "No Liked Blogs"
+        return {"res":"Not Found"}
 
 @app.get('/favourites/blogs/{user_id}')
 async def get_favourites_blogs(user_id:int):
@@ -218,16 +231,17 @@ async def get_favourites_blogs(user_id:int):
     favourites_blogs=cursor.fetchall()
     blog_id_tuple=()
     blog_id_list=[]
-    if favourites_blogs is not None:
+    if favourites_blogs != []:
         for id in favourites_blogs:
             blog_id_list.append(id[0])
         blog_id_tuple=tuple(blog_id_list)
+        print(blog_id_tuple)
         cursor.execute(f""" select * from blogs where blog_id in {blog_id_tuple}""")
         blogs_list = cursor.fetchall()
         blog_json = get_blogs_in_json_format(blogs_list)
         return blog_json
     else:
-        return "No Blogs added to Favourites"
+        return {"res":"Not Found"}
 
 @app.post('/likes/user/{user_id}/blog/{blog_id}')
 async def like_blog(user_id:int,blog_id:int):
