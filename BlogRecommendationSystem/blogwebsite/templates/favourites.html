@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"
+  crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  {% extends "layout.html" %}
+  {% block content %}
+  {% if posts is not none %}
+  {% for post in posts %}
+
+  <!-- <link rel="stylesheet" href="layout.css"> -->
+  <section class="light">
+    <div class="container py-2">
+
+      <article class="postcard light blue">
+        <a class="postcard__img_link">
+          <img src="{{ post.image }}" class="rounded float-left" alt="...">
+        </a>
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title blue"><a>{{ post.title }}</a></h1>
+          <h1 class="postcard__author blue"><a>{{ post.authors }}</a></h1>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">{{ post.content }}</div>
+          
+        </div>
+
+      </article>
+    </div>
+  </section>
+  {% endfor %}
+  {% else %}
+  <h1>Oops!! You haven't added any blogs to your favourites list</h1>
+  {% endif %}
+  {% endblock content %}
+
+</body>
+</html>

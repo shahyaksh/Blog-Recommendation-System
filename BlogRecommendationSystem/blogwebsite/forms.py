@@ -6,6 +6,7 @@ from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationE
 from blogwebsite import api_link
 import requests
 
+
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired(), Length(min=2, max=30)])
     email = StringField('Email', validators=[DataRequired(), Email()])
@@ -68,6 +69,7 @@ class ResetPasswordForm(FlaskForm):
     confirm_password = PasswordField('Confirm Password',
                                      validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Reset Password')
+
 
 class Comment(FlaskForm):
     content = TextAreaField('Content', validators=[DataRequired()])

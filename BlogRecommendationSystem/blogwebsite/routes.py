@@ -5,24 +5,41 @@ import requests
 from flask import render_template, url_for, flash, redirect, session, request
 from PIL import Image
 from blogwebsite.forms import RegistrationForm, LoginForm, UpdateAccountForm, RequestResetForm, ResetPasswordForm
-from blogwebsite import app, User_Token, mail,api_link
+from blogwebsite import app, User_Token, mail, api_link
 from flask_mail import Message
 from ProtectUserData import hash_user_pass
-
 
 app.secret_key = "579162fdrfughhxtds4rd886fjur65edfg"
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "redis"
 
 posts = []
+liked_posts = []
+favourite_blogs = []
+
 
 def get_blogs():
     if id in session:
-        posts = requests.get(f"{api_link}/blogs/{session.get(id)}").json()
+        posts = requests.get(f"{api_link}/blogs/{session['id']}").json()
     else:
         posts = requests.get(f"{api_link}/blogs").json()
     return posts
 
+
+def like_blogs():
+    liked_posts = requests.get(f"{api_link}/like/blogs/{session['id']}").json()
+    if liked_posts != {'res':"Not Found"}:
+        return liked_posts
+    else:
+        return None
+
+
+def fav_blogs():
+    favourite_blogs = requests.get(f"{api_link}/favourites/blogs/{session['id']}").json()
+    if favourite_blogs != {'res':"Not Found"}:
+        return favourite_blogs
+    else:
+        return None
 
 @app.route("/")
 @app.route("/home")
@@ -40,13 +57,31 @@ def about():
     return render_template('about.html', title='About')
 
 
+@app.route("/like")
+def like():
+    if session.get("name"):
+        return render_template('like.html', posts=like_blogs())
+    else:
+        form = LoginForm()
+        return render_template('login.html', title='Login', form=form)
+
+
+@app.route("/fav")
+def fav():
+    if session.get("name"):
+        return render_template('favourites.html', posts=fav_blogs())
+    else:
+        form = LoginForm()
+        return render_template('login.html', title='Login', form=form)
+
+
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
         user_name = form.username.data
         user_email = form.email.data
-        user_pass=form.password.data
+        user_pass = form.password.data
         hashed_password = hash_user_pass.get_password_hash(user_pass)
         resp = requests.post(f"{api_link}/register/name/{user_name}/email/{user_email}/password/{hashed_password}")
         message = resp.text
@@ -58,12 +93,12 @@ def register():
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     form = LoginForm()
-    if id in session:
+    if session.get("name"):
         return redirect(url_for("home"))
     elif form.validate_on_submit():
         user_email = form.email.data
         user_details = requests.get(f"{api_link}/login/email/{user_email}").json()
-        user_pass=form.password.data
+        user_pass = form.password.data
         hashed_password = hash_user_pass.get_password_hash(user_pass)
 
         if user_details['user_res'] == "Not Found":
@@ -73,7 +108,7 @@ def login():
             if form.remember.data is True:
                 app.config["SESSION_PERMANENT"] = True
             else:
-                app.permanent_session_lifetime = timedelta(weeks=5)
+                app.permanent_session_lifetime = timedelta(weeks=3)
 
             session["id"] = user_details["user_id"]
             session["name"] = user_details["user_name"]
@@ -171,9 +206,9 @@ def reset_token(token):
         return redirect(url_for('reset_request'))
     form = ResetPasswordForm()
     if form.validate_on_submit():
-        user_pass=form.password.data
+        user_pass = form.password.data
         hashed_password = hash_user_pass.get_password_hash(user_pass)
-        res=requests.post(f'{api_link}/update/user/id/{user["user_id"]}/password/{hashed_password}').text
+        res = requests.post(f'{api_link}/update/user/id/{user["user_id"]}/password/{hashed_password}').text
         print("Password Updated")
         flash('Your password has been updated! You are now able to log in', 'info')
         return redirect(url_for('login'))

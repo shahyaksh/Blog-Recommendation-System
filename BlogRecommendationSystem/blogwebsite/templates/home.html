@@ -5,70 +5,134 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"
-  crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-  }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
 
-  .btns {
-    padding-top: 20px;
+    .btns {
+      padding-top: 20px;
 
-  }
+    }
 
-  .btn {
-    background: transparent;
-    border: none;
-    margin-left: 10px;
-    outline: none;
-    color: grey;
-  }
+    .btn {
+      background: transparent;
+      border: none;
+      margin-left: 10px;
+      outline: none;
+      color: grey;
+    }
 
-  .btn i:hover {
-    cursor: pointer;
-  }
+    .btn i:hover {
+      cursor: pointer;
+    }
 
-  .button_tag{
-    margin-left: -10px;
-    margin-right: 30px;
-  }
-  .button_tag1{
-    margin-left: 450px;
-  }
+    .button_tag {
+      margin-left: -10px;
+      margin-right: 30px;
+    }
 
-</style>
+    .button_tag1 {
+      margin-left: 450px;
+    }
+  </style>
 </head>
 
-
 <body>
-        <script>
+  <script>
 
-          function Toggle1(b_id) {
-            var btnvar1 = document.getElementById(b_id);
-            console.log(btnvar1);
-            if (btnvar1.style.color == "red") {
-              btnvar1.style.color = "grey"
-            }
-            else {
-              btnvar1.style.color = "red"
-            }
-
+    function like_or_Unlike_Blog_Post(blog_details) {
+      var btnvar1 = document.getElementById(blog_details);
+      const request = new XMLHttpRequest();
+      var blog_detail = blog_details;
+      var detail = blog_detail.split(' ');
+      var blog_id = detail[0]
+      var user_id = detail[1]
+      if (user_id) {
+        remove_like_from_blog_link = `http://127.0.0.1:8000/deletelike/user/${user_id}/blog/${blog_id}`
+        add_like_to_blog_link = `http://127.0.0.1:8000/likes/user/${user_id}/blog/${blog_id}`
+        if (btnvar1.style.color == "red") {
+          btnvar1.style.color = "grey"
+          request.open("DELETE", remove_like_from_blog_link, true);
+          request.send();
+          request.onload = () => {
+            if (request.status == 200)
+              console.log(JSON.parse(request.response));
+            else
+              console.log('error');
+          }
+        }
+        else {
+          request.open("POST", add_like_to_blog_link);
+          btnvar1.style.color = "red"
+          request.send();
+          request.onload = () => {
+            if (request.status == 200)
+              console.log(JSON.parse(request.response));
+            else
+              console.log('error');
           }
 
-          function Toggle2(f_id) {
-            var btnvar2 = document.getElementById(f_id);
-            console.log(btnvar2);
-            if (btnvar2.style.color == "red") {
-              btnvar2.style.color = "grey"
-            }
-            else {
-              btnvar2.style.color = "red"
-            }
+        }
 
+      }
+
+    }
+
+    function Add_or_Remove_Blog_from_Favourites(blog_details) {
+      var btnvar2 = document.getElementById(blog_details);
+      const request = new XMLHttpRequest();
+      var blog_detail = blog_details;
+      var detail = blog_detail.split(' ');
+      var blog_id = detail[0]
+      var user_id = detail[1]
+      if (user_id) {
+        add_blog_to_fav_link = `http://127.0.0.1:8000/favourites/user/${user_id}/blog/${blog_id}`
+        remove_blog_from_fav_link = `http://127.0.0.1:8000/removefromfavourites/user/${user_id}/blog/${blog_id}`
+        if (btnvar2.style.color == "red") {
+          btnvar2.style.color = "grey"
+          request.open("DELETE", remove_blog_from_fav_link, true);
+          request.send();
+          request.onload = () => {
+            if (request.status() == 200)
+              console.log(JSON.parse(request.response));
+            else
+              console.log('error');
           }
-        </script>
+        }
+        else {
+          btnvar2.style.color = "red"
+          request.open("POST", add_blog_to_fav_link);
+          request.send();
+          request.onload = () => {
+            if (request.status == 200)
+              console.log(JSON.parse(request.response));
+            else
+              console.log('error');
+          }
+
+        }
+
+      }
+
+    }
+
+    function See_More(blog_details) {
+      var blog_detail = blog_details;
+      var detail = blog_detail.split(' ');
+      var blog_id = detail[0]
+      var user_id = detail[1]
+      const element = document.getElementById(blog_details);
+      element.addEventListener("click", function () {
+
+      });
+
+    }
+
+  </script>
   {% extends "layout.html" %}
   {% block content %}
   {% for post in posts %}
@@ -87,11 +151,14 @@
           <div class="postcard__bar"></div>
           <div class="postcard__preview-txt">{{ post.content }}</div>
 
-
           <div class="btns">
-            <span class="button_tag"><a href="{{ post.content_link }}" target="_blank"><Button class="btn">See More..</Button></a></span>
-            <span class="button_tag1"><Button onclick="Toggle1(this.id)" class="btn" id="{{post.blog_id}} like"><i class="fas fa-heart"></i></Button></span>
-            <span class="button_tag2"><Button onclick="Toggle2(this.id)" class="btn" id="{{post.blog_id}} fav"><i class="fa-solid fa-bookmark"></i></Button></span>
+            <span class="button_tag"><a href="{{ post.content_link }}" target="_blank"><Button
+                  onclick="See_More(this.id)" class="btn" id="{{post.blog_id}} {{session['id']}} see">See
+                  More..</Button></a></span>
+            <span class="button_tag1"><Button onclick="like_or_Unlike_Blog_Post(this.id)" class="btn"
+                id="{{post.blog_id}} {{session['id']}} like"><i class="fas fa-heart"></i></Button></span>
+            <span class="button_tag2"><Button onclick="Add_or_Remove_Blog_from_Favourites(this.id)" class="btn"
+                id="{{post.blog_id}} {{session['id']}} fav"><i class="fa-solid fa-bookmark"></i></Button></span>
           </div>
 
         </div>
@@ -103,4 +170,5 @@
   {% endblock content %}
 
 </body>
+
 </html>
