@@ -211,16 +211,21 @@ async def get_liked_blogs(user_id:int):
     liked_blogs=cursor.fetchall()
     blog_id_tuple=()
     blog_id_list=[]
+    blog_json=[]
+    blog_list=[]
     if liked_blogs != []:
-
         for id in liked_blogs:
             blog_id_list.append(id[0])
-            print(blog_id_list)
         blog_id_tuple=tuple(blog_id_list)
-        print(blog_id_tuple)
-        cursor.execute(f""" select * from blogs where blog_id in {blog_id_tuple}""")
-        blogs_list = cursor.fetchall()
-        blog_json = get_blogs_in_json_format(blogs_list)
+        if len(blog_id_tuple)>1:
+            cursor.execute(f""" select * from blogs where blog_id in {blog_id_tuple}""")
+            blogs_list = cursor.fetchall()
+            blog_json = get_blogs_in_json_format(blogs_list)
+        else:
+            cursor.execute(f""" select * from blogs where blog_id={blog_id_tuple[0]}""")
+            blogs_list = cursor.fetchall()
+            blog_json = get_blogs_in_json_format(blogs_list)
+
         return blog_json
     else:
         return {"res":"Not Found"}
@@ -235,13 +240,18 @@ async def get_favourites_blogs(user_id:int):
         for id in favourites_blogs:
             blog_id_list.append(id[0])
         blog_id_tuple=tuple(blog_id_list)
-        print(blog_id_tuple)
-        cursor.execute(f""" select * from blogs where blog_id in {blog_id_tuple}""")
-        blogs_list = cursor.fetchall()
-        blog_json = get_blogs_in_json_format(blogs_list)
+        if len(blog_id_tuple) > 1:
+            cursor.execute(f""" select * from blogs where blog_id in {blog_id_tuple}""")
+            blogs_list = cursor.fetchall()
+            blog_json = get_blogs_in_json_format(blogs_list)
+        else:
+            cursor.execute(f""" select * from blogs where blog_id={blog_id_tuple[0]}""")
+            blogs_list = cursor.fetchall()
+            blog_json = get_blogs_in_json_format(blogs_list)
         return blog_json
     else:
-        return {"res":"Not Found"}
+        return {"res": "Not Found"}
+
 
 @app.post('/likes/user/{user_id}/blog/{blog_id}')
 async def like_blog(user_id:int,blog_id:int):
