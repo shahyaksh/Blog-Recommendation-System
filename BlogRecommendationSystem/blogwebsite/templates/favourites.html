@@ -5,10 +5,103 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"
-  crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .btns {
+      padding-top: 20px;
+
+    }
+
+    .btn {
+      background: transparent;
+      border: none;
+      margin-left: 10px;
+      outline: none;
+      color: grey;
+    }
+
+    .btn i:hover {
+      cursor: pointer;
+    }
+    .btn_fav{
+      background: transparent;
+      border: none;
+      margin-left: 10px;
+      outline: none;
+      color: red;
+    }
+
+
+    .button_tag {
+      margin-left: -10px;
+      margin-right: 30px;
+    }
+
+    .button_tag2 {
+      margin-left: 450px;
+    }
+  </style>
 </head>
 
+<script>
+  
+  function Add_or_Remove_Blog_from_Favourites(blog_details) {
+    var btnvar2 = document.getElementById(blog_details);
+    const request = new XMLHttpRequest();
+    var blog_detail = blog_details;
+    var detail = blog_detail.split(' ');
+    var blog_id = detail[0]
+    var user_id = detail[1]
+    if (user_id) {
+      add_blog_to_fav_link = `http://127.0.0.1:8000/favourites/user/${user_id}/blog/${blog_id}`
+      remove_blog_from_fav_link = `http://127.0.0.1:8000/removefromfavourites/user/${user_id}/blog/${blog_id}`
+      if (btnvar2.style.color == "red") {
+        btnvar2.style.color = "grey"
+        request.open("DELETE", remove_blog_from_fav_link, true);
+        request.send();
+        request.onload = () => {
+          if (request.status() == 200)
+            console.log(JSON.parse(request.response));
+          else
+            console.log('error');
+        }
+      }
+      else {
+        btnvar2.style.color = "red"
+        request.open("POST", add_blog_to_fav_link);
+        request.send();
+        request.onload = () => {
+          if (request.status == 200)
+            console.log(JSON.parse(request.response));
+          else
+            console.log('error');
+        }
+
+      }
+
+    }
+
+  }
+
+  function See_More(blog_details) {
+    var blog_detail = blog_details;
+    var detail = blog_detail.split(' ');
+    var blog_id = detail[0]
+    var user_id = detail[1]
+    const element = document.getElementById(blog_details);
+    element.addEventListener("click", function () {
+
+    });
+
+  }
+
+</script>
 <body>
   {% extends "layout.html" %}
   {% block content %}
@@ -28,7 +121,14 @@
           <h1 class="postcard__author blue"><a>{{ post.authors }}</a></h1>
           <div class="postcard__bar"></div>
           <div class="postcard__preview-txt">{{ post.content }}</div>
-          
+          <div class="btns">
+            <span class="button_tag"><a href="{{ post.content_link }}" target="_blank"><Button
+                  onclick="See_More(this.id)" class="btn" id="{{post.blog_id}} {{session['id']}} see">See
+                  More..</Button></a></span>
+            <span class="button_tag2"><Button onclick="Add_or_Remove_Blog_from_Favourites(this.id)" class="btn_fav"
+                id="{{post.blog_id}} {{session['id']}} fav"><i class="fa-solid fa-bookmark"></i></Button></span>
+          </div>
+
         </div>
 
       </article>
