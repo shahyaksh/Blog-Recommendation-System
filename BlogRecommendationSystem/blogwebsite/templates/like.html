@@ -5,14 +5,107 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"
-  crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .btns {
+      padding-top: 20px;
+
+    }
+
+    .btn {
+      background: transparent;
+      border: none;
+      margin-left: 10px;
+      outline: none;
+      color: grey;
+    }
+
+    .btn i:hover {
+      cursor: pointer;
+    }
+    .btn_like {
+      background: transparent;
+      border: none;
+      margin-left: 10px;
+      outline: none;
+      color: red;
+    }
+
+
+    .button_tag {
+      margin-left: -10px;
+      margin-right: 30px;
+    }
+
+    .button_tag1 {
+      margin-left: 450px;
+    }
+  </style>
 </head>
 
 <body>
+  <script>
+
+    function like_or_Unlike_Blog_Post(blog_details) {
+      var btnvar1 = document.getElementById(blog_details);
+      const request = new XMLHttpRequest();
+      var blog_detail = blog_details;
+      var detail = blog_detail.split(' ');
+      var blog_id = detail[0]
+      var user_id = detail[1]
+      if (user_id) {
+        remove_like_from_blog_link = `http://127.0.0.1:8000/deletelike/user/${user_id}/blog/${blog_id}`
+        add_like_to_blog_link = `http://127.0.0.1:8000/likes/user/${user_id}/blog/${blog_id}`
+        if (btnvar1.style.color == "red") {
+          btnvar1.style.color = "grey"
+          request.open("DELETE", remove_like_from_blog_link, true);
+          request.send();
+          request.onload = () => {
+            if (request.status == 200)
+              console.log(JSON.parse(request.response));
+            else
+              console.log('error');
+          }
+        }
+        else {
+          request.open("POST", add_like_to_blog_link);
+          btnvar1.style.color = "red"
+          request.send();
+          request.onload = () => {
+            if (request.status == 200)
+              console.log(JSON.parse(request.response));
+            else
+              console.log('error');
+          }
+
+        }
+
+      }
+
+    }
+
+    function See_More(blog_details) {
+      var blog_detail = blog_details;
+      var detail = blog_detail.split(' ');
+      var blog_id = detail[0]
+      var user_id = detail[1]
+      const element = document.getElementById(blog_details);
+      element.addEventListener("click", function () {
+
+      });
+
+    }
+
+  </script>
   {% extends "layout.html" %}
   {% block content %}
-  {% if posts is not none %}
+  {% if posts is not none%}
   {% for post in posts %}
 
   <!-- <link rel="stylesheet" href="layout.css"> -->
@@ -28,7 +121,15 @@
           <h1 class="postcard__author blue"><a>{{ post.authors }}</a></h1>
           <div class="postcard__bar"></div>
           <div class="postcard__preview-txt">{{ post.content }}</div>
-          
+
+          <div class="btns">
+            <span class="button_tag"><a href="{{ post.content_link }}" target="_blank"><Button
+                  onclick="See_More(this.id)" class="btn" id="{{post.blog_id}} {{session['id']}} see">See
+                  More..</Button></a></span>
+            <span class="button_tag1"><Button onclick="like_or_Unlike_Blog_Post(this.id)" class="btn_like"
+                id="{{post.blog_id}} {{session['id']}} like"><i class="fas fa-heart"></i></Button></span>
+          </div>
+
         </div>
 
       </article>
@@ -36,9 +137,10 @@
   </section>
   {% endfor %}
   {% else %}
-  <h1>Oops!! You don't have any liked blogs</h1>
+  <h1>Oops! you have no liked blog</h1>
   {% endif %}
   {% endblock content %}
 
 </body>
+
 </html>
