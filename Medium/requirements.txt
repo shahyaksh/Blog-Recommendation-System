@@ -64,3 +64,4 @@ wsproto==1.2.0
 zipp==3.11.0
 zope.interface==5.5.2
 streamlit
+mysql-connector-python
