@@ -18,16 +18,28 @@
 
     }
 
-    .btn {
+    .btn_see {
+      background: transparent;
+      border: none;
+      margin-left: 10px;
+      outline: none;
+      color: black;
+    }
+    .btn_see:hover{
+      color: blue;
+    }
+    .btn_see:focus {
+      outline: none;
+    }
+    .btn_like {
       background: transparent;
       border: none;
       margin-left: 10px;
       outline: none;
       color: grey;
     }
-
-    .btn i:hover {
-      cursor: pointer;
+    .btn_like:focus {
+        outline: none;
     }
     .btn_fav{
       background: transparent;
@@ -36,21 +48,60 @@
       outline: none;
       color: red;
     }
-
+    .btn_fav:focus {
+        outline: none;
+    }
 
     .button_tag {
       margin-left: -10px;
       margin-right: 30px;
     }
-
-    .button_tag2 {
+    .button_tag1 {
       margin-left: 450px;
     }
   </style>
 </head>
 
 <script>
-  
+  function like_or_Unlike_Blog_Post(blog_details) {
+    var btnvar1 = document.getElementById(blog_details);
+    const request = new XMLHttpRequest();
+    var blog_detail = blog_details;
+    var detail = blog_detail.split(' ');
+    var blog_id = detail[0]
+    var user_id = detail[1]
+    if (user_id) {
+      remove_like_from_blog_link = `http://127.0.0.1:8000/deletelike/user/${user_id}/blog/${blog_id}`
+      add_like_to_blog_link = `http://127.0.0.1:8000/likes/user/${user_id}/blog/${blog_id}`
+      if (btnvar1.style.color == "red") {
+        btnvar1.style.color = "grey"
+        request.open("DELETE", remove_like_from_blog_link, true);
+        request.send();
+        request.onload = () => {
+          if (request.status == 200)
+            console.log(JSON.parse(request.response));
+          else
+            console.log('error');
+        }
+      }
+      else {
+        request.open("POST", add_like_to_blog_link);
+        btnvar1.style.color = "red"
+        request.send();
+        request.onload = () => {
+          if (request.status == 200)
+            console.log(JSON.parse(request.response));
+          else
+            console.log('error');
+        }
+
+      }
+
+    }
+
+  }
+
+
   function Add_or_Remove_Blog_from_Favourites(blog_details) {
     var btnvar2 = document.getElementById(blog_details);
     const request = new XMLHttpRequest();
@@ -90,14 +141,21 @@
   }
 
   function See_More(blog_details) {
+    const element = document.getElementById(blog_details);
+    const request = new XMLHttpRequest();
     var blog_detail = blog_details;
     var detail = blog_detail.split(' ');
     var blog_id = detail[0]
     var user_id = detail[1]
-    const element = document.getElementById(blog_details);
-    element.addEventListener("click", function () {
-
-    });
+    var url = `http://127.0.0.1:8000/content/seen/user/${user_id}/blog/${blog_id}`
+    request.open("POST", url);
+        request.send();
+        request.onload = () => {
+          if (request.status == 200)
+            console.log(JSON.parse(request.response));
+          else
+            console.log('error');
+      }
 
   }
 
@@ -123,8 +181,10 @@
           <div class="postcard__preview-txt">{{ post.content }}</div>
           <div class="btns">
             <span class="button_tag"><a href="{{ post.content_link }}" target="_blank"><Button
-                  onclick="See_More(this.id)" class="btn" id="{{post.blog_id}} {{session['id']}} see">See
+                  onclick="See_More(this.id)" class="btn_see" id="{{post.blog_id}} {{session['id']}} see">See
                   More..</Button></a></span>
+            <span class="button_tag1"><Button onclick="like_or_Unlike_Blog_Post(this.id)" class="btn_like"
+                id="{{post.blog_id}} {{session['id']}} like"><i class="fas fa-heart"></i></Button> {{ post.like_count }}</span>
             <span class="button_tag2"><Button onclick="Add_or_Remove_Blog_from_Favourites(this.id)" class="btn_fav"
                 id="{{post.blog_id}} {{session['id']}} fav"><i class="fa-solid fa-bookmark"></i></Button></span>
           </div>
