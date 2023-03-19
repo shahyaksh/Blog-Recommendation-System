@@ -1,6 +1,5 @@
 from fastapi import FastAPI, HTTPException, status, Response
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
 import mysql.connector as SqlConnector
 import time
 from datetime import datetime
@@ -29,6 +28,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+def get_like_counts(blog_id:int):
+    cursor.execute(""" select * from likes where blog_id=%s""",[blog_id])
+    likes=cursor.fetchall()
+    counts = len(likes)
+    return counts
+
 def get_blogs_in_json_format(blogs_list: list):
     blog_json = []
     for blog in blogs_list:
@@ -42,7 +47,9 @@ def get_blogs_in_json_format(blogs_list: list):
             "content": blog[3],
             "image": blog[5],
             "topic": blog[6],
+            "like_count":get_like_counts(blog[0]),
             "scrape_time": blog[7]
+
         }
         blog_json.append(blog_dict)
         blog_dict = {}
@@ -79,6 +86,42 @@ def get_blogs_not_to_consider(user_id:int):
         blog_id_not_to_consider_tuple = tuple(blog_id_not_to_consider_list)
     return blog_id_not_to_consider_tuple
 
+def add_user_ratings(user_id:int,blog_id:int):
+    cursor.execute("""select * from ratings where blog_id=%s and user_id=%s""", [blog_id, user_id])
+    if cursor.fetchone():
+        return "Already exist"
+    else:
+        curr_time = datetime.now(timezone("Asia/Kolkata")).strftime('%Y-%m-%d %H:%M:%S')
+        datetime_obj = datetime.strptime(curr_time, '%Y-%m-%d %H:%M:%S')
+        cursor.execute("""insert into ratings(user_id,blog_id,rating,timestamp)values(%s,%s,%s,%s)""",
+                       [user_id, blog_id, 0.5, datetime_obj])
+        mydb.commit()
+        return "seen"
+
+
+def update_user_rating(user_id:int):
+    curr_time = datetime.now(timezone("Asia/Kolkata")).strftime('%Y-%m-%d %H:%M:%S')
+    datetime_obj = datetime.strptime(curr_time, '%Y-%m-%d %H:%M:%S')
+
+    cursor.execute(""" update ratings set rating=%s,timestamp=%s where user_id=%s and blog_id in
+                        (select * from (select likes.blog_id from likes inner join ratings on 
+                        likes.user_id = ratings.user_id and likes.blog_id=ratings.blog_id) tb1tmp)""",
+                   [2,datetime_obj,user_id])
+    mydb.commit()
+
+    cursor.execute(""" update ratings set rating=%s,timestamp=%s where user_id=%s and blog_id in
+                      (select * from (select favourites.blog_id from favourites inner join ratings on 
+                    favourites.user_id = ratings.user_id and favourites.blog_id=ratings.blog_id) tb1tmp)""",
+                   [3.5,datetime_obj,user_id])
+    mydb.commit()
+
+    cursor.execute(""" update ratings set rating=%s,timestamp=%s where user_id=%s and blog_id in 
+                        (select * from (select favourites.blog_id from favourites inner join likes on 
+                        likes.user_id=favourites.user_id and likes.blog_id=favourites.blog_id)tb1tmp)""",
+                        [5,datetime_obj,user_id])
+    mydb.commit()
+
+
 @app.get('/')
 async def root():
     return {"message": "Welcome to the Blog API Created by Yaksh Shah"}
@@ -101,6 +144,7 @@ async def user_login(user_email:str):
     resp = cursor.fetchone()
     if resp is not None:
         user_details={'user_id':resp[0],'user_name':resp[1],'user_email':resp[2],'user_pass':resp[3],"user_res":"Found"}
+        update_user_rating(user_details['user_id'])
         return user_details
     else:
         return {"user_res":"Not Found"}
@@ -128,6 +172,7 @@ async def update_user_profile_pic(user_pic:str,user_id:int):
     # execute the query
     mydb.commit()
     return "User Profile Pic Updated"
+
 
 @app.post('/update/user/id/{user_id}/password/{user_pass}')
 async def update_user_account_password(user_pass:str,user_id:int):
@@ -185,7 +230,7 @@ async def get_user_details(user_id:int):
 
 @app.get('/blogs')
 async def get_blogs_for_home_before_login():
-    cursor.execute(f""" select * from blogs where blog_id order by rand() limit 50""")
+    cursor.execute(f""" select * from blogs where blog_id order by rand() limit 20""")
     blogs_list = cursor.fetchall()
     blog_json = get_blogs_in_json_format(blogs_list)
     return blog_json
@@ -194,9 +239,9 @@ async def get_blogs_for_home_before_login():
 async def get_blogs_for_home_after_login(user_id:int):
     blog_id_not_to_consider_tuple=get_blogs_not_to_consider(user_id)
     if blog_id_not_to_consider_tuple is not None:
-        cursor.execute(f""" select * from blogs where blog_id order by rand() limit 50""")
+        cursor.execute(f""" select * from blogs where blog_id order by rand() limit 20""")
     else:
-        cursor.execute(f""" select * from blogs where blog_id not in {blog_id_not_to_consider_tuple} order by rand() limit 50""")
+        cursor.execute(f""" select * from blogs where blog_id not in {blog_id_not_to_consider_tuple} order by rand() limit 20""")
     blogs_list = cursor.fetchall()
     blog_json = get_blogs_in_json_format(blogs_list)
     return blog_json
@@ -253,13 +298,24 @@ async def get_favourites_blogs(user_id:int):
         return {"res": "Not Found"}
 
 
+
+@app.post('/content/seen/user/{user_id}/blog/{blog_id}')
+async def seen_blog_content(user_id:int,blog_id:int):
+    result=add_user_ratings(user_id,blog_id)
+    return result
+
 @app.post('/likes/user/{user_id}/blog/{blog_id}')
 async def like_blog(user_id:int,blog_id:int):
-    curr_time = datetime.now(timezone("Asia/Kolkata")).strftime('%Y-%m-%d %H:%M:%S')
-    datetime_obj = datetime.strptime(curr_time, '%Y-%m-%d %H:%M:%S')
-    cursor.execute("""insert into likes(user_id,blog_id,date_created)values(%s,%s,%s)""",[user_id,blog_id,datetime_obj])
-    mydb.commit()
-    return "Inserted"
+    cursor.execute("""select * from likes where blog_id=%s and user_id=%s""", [blog_id, user_id])
+    if cursor.fetchone():
+        return "Already exist"
+    else:
+        curr_time = datetime.now(timezone("Asia/Kolkata")).strftime('%Y-%m-%d %H:%M:%S')
+        datetime_obj = datetime.strptime(curr_time, '%Y-%m-%d %H:%M:%S')
+        cursor.execute("""insert into likes(user_id,blog_id,date_created)values(%s,%s,%s)""",[user_id,blog_id,datetime_obj])
+        mydb.commit()
+        add_user_ratings(user_id,blog_id)
+        return "liked"
 
 @app.delete('/deletelike/user/{user_id}/blog/{blog_id}')
 async def unlike_blog(user_id:int,blog_id:int):
@@ -267,12 +323,16 @@ async def unlike_blog(user_id:int,blog_id:int):
     mydb.commit()
     return "unliked"
 
-
 @app.post('/favourites/user/{user_id}/blog/{blog_id}')
 async def add_blog_to_favourites(user_id:int,blog_id:int):
-    cursor.execute("""insert into favourites(user_id,blog_id)values(%s,%s)""",[user_id,blog_id])
-    mydb.commit()
-    return "Added to Favourites"
+    cursor.execute("""select * from favourites where blog_id=%s and user_id=%s""",[blog_id,user_id])
+    if cursor.fetchone():
+        return "Already exist"
+    else:
+        cursor.execute("""insert into favourites(user_id,blog_id)values(%s,%s)""",[user_id,blog_id])
+        mydb.commit()
+        add_user_ratings(user_id, blog_id)
+        return "Added to Favourites"
 
 @app.delete('/removefromfavourites/user/{user_id}/blog/{blog_id}')
 async def remove_blog_from_favourites(user_id:int,blog_id:int):
