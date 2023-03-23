@@ -230,7 +230,7 @@ async def get_user_details(user_id:int):
 
 @app.get('/blogs')
 async def get_blogs_for_home_before_login():
-    cursor.execute(f""" select * from blogs where blog_id order by rand() limit 20""")
+    cursor.execute(f""" select * from blogs where blog_id order by rand() limit 30""")
     blogs_list = cursor.fetchall()
     blog_json = get_blogs_in_json_format(blogs_list)
     return blog_json
@@ -239,9 +239,9 @@ async def get_blogs_for_home_before_login():
 async def get_blogs_for_home_after_login(user_id:int):
     blog_id_not_to_consider_tuple=get_blogs_not_to_consider(user_id)
     if blog_id_not_to_consider_tuple is not None:
-        cursor.execute(f""" select * from blogs where blog_id order by rand() limit 20""")
+        cursor.execute(f""" select * from blogs where blog_id order by rand() limit 30""")
     else:
-        cursor.execute(f""" select * from blogs where blog_id not in {blog_id_not_to_consider_tuple} order by rand() limit 20""")
+        cursor.execute(f""" select * from blogs where blog_id not in {blog_id_not_to_consider_tuple} order by rand() limit 30""")
     blogs_list = cursor.fetchall()
     blog_json = get_blogs_in_json_format(blogs_list)
     return blog_json
@@ -296,7 +296,6 @@ async def get_favourites_blogs(user_id:int):
         return blog_json
     else:
         return {"res": "Not Found"}
-
 
 
 @app.post('/content/seen/user/{user_id}/blog/{blog_id}')
