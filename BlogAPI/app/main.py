@@ -277,16 +277,19 @@ async def get_blogs_for_home_after_login(user_id:int):
 
 @app.get('/recommend/similar/blogs/{user_id}')
 async def get_recommended_blogs_using_cosine_similarity(user_id:int):
-    cursor.execute('select blog_id,blog_content,topic from blogs')
-    blogs_list = cursor.fetchall()
-    blogs_json = get_blogs_in_json_format(blogs_list,True)
-    cursor.execute('select * from ratings where user_id=%s', (user_id,))
+    cursor.execute('select * from ratings where user_id=%s', [user_id])
     ratings_list = cursor.fetchall()
     ratings_json = get_user_ratings_in_json_format(ratings_list)
-    recommended_blogs = Using_Cosine_Similarity.get_similar_blog(blogs_json,ratings_json)
-    recommended_blogs_json = get_blogs_for_recommendation(tuple(recommended_blogs))
-
-    return recommended_blogs_json
+    if len(ratings_json) < 3:
+        return []
+    else:
+        cursor.execute('select blog_id,blog_content,topic from blogs')
+        blogs_list = cursor.fetchall()
+        blogs_json = get_blogs_in_json_format(blogs_list,True)
+        recommended_blogs = Using_Cosine_Similarity.get_similar_blog(blogs_json,ratings_json)
+        print(recommended_blogs)
+        recommended_blogs_json = get_blogs_for_recommendation(tuple(recommended_blogs))
+        return recommended_blogs_json
 
 @app.get('/like/blogs/{user_id}')
 async def get_liked_blogs(user_id:int):
