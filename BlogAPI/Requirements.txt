@@ -13,3 +13,9 @@ typing_extensions==4.3.0
 uuid==1.30
 uvicorn==0.18.2
 pytz
+cryptography
+scikit-learn
+requests
+nltk
+numpy
+pandas
