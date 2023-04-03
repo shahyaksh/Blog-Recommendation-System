@@ -85,7 +85,7 @@ def register():
         hashed_password = hash_user_pass.get_password_hash(user_pass)
         resp = requests.post(f"{api_link}/register/name/{user_name}/email/{user_email}/password/{hashed_password}")
         message = resp.text
-        flash(f'Your account has been created now you can log in', 'success')
+        flash(f'Your account has been created now you can log in', 'info')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 
@@ -217,11 +217,8 @@ def reset_token(token):
 
 @app.route("/recommend", methods=['GET', 'POST'])
 def recommend():
-    # if session.get("name"):
-    #     form = PostForm()
-    #     if form.validate_on_submit():
-    #         flash('Your Post has been Created','success')
-    #         return(redirect(url_for('home')))
-    return render_template('Recommend.html', posts=posts)
-# else:
-#     return redirect(url_for('home'))
+    if session.get("name"):
+        recommeded_blogs = requests.get(f"{api_link}/recommend/similar/blogs/{session['id']}").json()
+        return render_template('Recommend.html', posts=recommeded_blogs)
+    else:
+        return redirect(url_for('home'))
