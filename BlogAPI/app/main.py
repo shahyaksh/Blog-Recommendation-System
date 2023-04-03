@@ -4,6 +4,7 @@ import mysql.connector as SqlConnector
 import time
 from datetime import datetime
 from pytz import timezone
+from Recommend_Blogs import Using_Cosine_Similarity
 
 while True:
     try:
@@ -34,26 +35,37 @@ def get_like_counts(blog_id:int):
     counts = len(likes)
     return counts
 
-def get_blogs_in_json_format(blogs_list: list):
+def get_blogs_in_json_format(blogs_list: list,for_recommendation:bool=False):
     blog_json = []
-    for blog in blogs_list:
-        cursor.execute('select author_name from author where author_id=%s', [blog[1]])
-        author_name = cursor.fetchone()[0]
-        blog_dict = {
-            "blog_id": blog[0],
-            "authors": author_name,
-            "content_link": blog[4],
-            "title": blog[2],
-            "content": blog[3],
-            "image": blog[5],
-            "topic": blog[6],
-            "like_count":get_like_counts(blog[0]),
-            "scrape_time": blog[7]
+    if for_recommendation==True:
+        for blog in blogs_list:
+            blog_dict = {
+                "blog_id": blog[0],
+                "content": blog[1],
+                "topic": blog[2]
+            }
+            blog_json.append(blog_dict)
+            blog_dict = {}
+        return blog_json
+    else:
+        for blog in blogs_list:
+            cursor.execute('select author_name from author where author_id=%s', [blog[1]])
+            author_name = cursor.fetchone()[0]
+            blog_dict = {
+                "blog_id": blog[0],
+                "authors": author_name,
+                "content_link": blog[4],
+                "title": blog[2],
+                "content": blog[3],
+                "image": blog[5],
+                "topic": blog[6],
+                "like_count":get_like_counts(blog[0]),
+                "scrape_time": blog[7]
 
-        }
-        blog_json.append(blog_dict)
-        blog_dict = {}
-    return blog_json
+            }
+            blog_json.append(blog_dict)
+            blog_dict = {}
+        return blog_json
 
 def get_blogs_not_to_consider(user_id:int):
 
@@ -120,6 +132,23 @@ def update_user_rating(user_id:int):
                         likes.user_id=favourites.user_id and likes.blog_id=favourites.blog_id)tb1tmp)""",
                         [5,datetime_obj,user_id])
     mydb.commit()
+def get_user_ratings_in_json_format(ratings_list:list):
+    ratings_json = []
+    for rating in ratings_list:
+        rating_dict = {
+            "user_id": rating[0],
+            "blog_id": rating[1],
+            "rating": rating[2],
+        }
+        ratings_json.append(rating_dict)
+        rating_dict = {}
+    return ratings_json
+
+def get_blogs_for_recommendation(recommended_blogs:tuple):
+    cursor.execute(f'select * from blogs where blog_id in {recommended_blogs}')
+    blogs_list = cursor.fetchall()
+    blogs_json = get_blogs_in_json_format(blogs_list)
+    return blogs_json
 
 
 @app.get('/')
@@ -246,9 +275,18 @@ async def get_blogs_for_home_after_login(user_id:int):
     blog_json = get_blogs_in_json_format(blogs_list)
     return blog_json
 
-@app.get('/recommend/blogs/{user_id}')
-async def get_recommended_blogs(user_id:int):
-    pass
+@app.get('/recommend/similar/blogs/{user_id}')
+async def get_recommended_blogs_using_cosine_similarity(user_id:int):
+    cursor.execute('select blog_id,blog_content,topic from blogs')
+    blogs_list = cursor.fetchall()
+    blogs_json = get_blogs_in_json_format(blogs_list,True)
+    cursor.execute('select * from ratings where user_id=%s', (user_id,))
+    ratings_list = cursor.fetchall()
+    ratings_json = get_user_ratings_in_json_format(ratings_list)
+    recommended_blogs = Using_Cosine_Similarity.get_similar_blog(blogs_json,ratings_json)
+    recommended_blogs_json = get_blogs_for_recommendation(tuple(recommended_blogs))
+
+    return recommended_blogs_json
 
 @app.get('/like/blogs/{user_id}')
 async def get_liked_blogs(user_id:int):
@@ -338,5 +376,6 @@ async def remove_blog_from_favourites(user_id:int,blog_id:int):
     cursor.execute(""" delete from favourites where user_id=%s and blog_id=%s""",(user_id,blog_id))
     mydb.commit()
     return "Removed from Favourites"
+
 
 #uvicorn app.main:app --reload
