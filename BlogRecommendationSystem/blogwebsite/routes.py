@@ -1,13 +1,16 @@
 import os
 import secrets
+import pathlib
 from datetime import timedelta
 import requests
-from flask import render_template, url_for, flash, redirect, session, request
+from flask import render_template, url_for, flash, redirect, session, request, abort
 from PIL import Image
-from blogwebsite.forms import RegistrationForm, LoginForm, UpdateAccountForm, RequestResetForm, ResetPasswordForm
-from blogwebsite import app, User_Token, mail, api_link
-from flask_mail import Message
-from ProtectUserData import hash_user_pass
+from blogwebsite.forms import RegistrationForm, UpdateAccountForm
+from blogwebsite import app, api_link
+from google.oauth2 import id_token
+from google_auth_oauthlib.flow import Flow
+from pip._vendor import cachecontrol
+import google.auth.transport.requests
 
 app.secret_key = "579162fdrfughhxtds4rd886fjur65edfg"
 app.config["SESSION_PERMANENT"] = False
@@ -16,6 +19,18 @@ app.config["SESSION_TYPE"] = "redis"
 posts = []
 liked_posts = []
 favourite_blogs = []
+
+os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
+
+GOOGLE_CLIENT_ID = "1007230502107-u5mef247por579ibk07svp58hsuajrst.apps.googleusercontent.com"
+client_secrets_file = os.path.join(pathlib.Path(__file__).parent, "client_secret.json")
+
+flow = Flow.from_client_secrets_file(
+    client_secrets_file=client_secrets_file,
+    scopes=["https://www.googleapis.com/auth/userinfo.profile", "https://www.googleapis.com/auth/userinfo.email",
+            "openid"],
+    redirect_uri="http://127.0.0.1:5000/callback"
+)
 
 
 def get_blogs():
@@ -28,7 +43,7 @@ def get_blogs():
 
 def like_blogs():
     liked_posts = requests.get(f"{api_link}/like/blogs/{session['id']}").json()
-    if liked_posts != {'res':"Not Found"}:
+    if liked_posts != {'res': "Not Found"}:
         return liked_posts
     else:
         return None
@@ -36,24 +51,20 @@ def like_blogs():
 
 def fav_blogs():
     favourite_blogs = requests.get(f"{api_link}/favourites/blogs/{session['id']}").json()
-    if favourite_blogs != {'res':"Not Found"}:
+    if favourite_blogs != {'res': "Not Found"}:
         return favourite_blogs
     else:
         return None
 
+
 @app.route("/")
 @app.route("/home")
 def home():
-    # if session.get("id") is None:
-    #     return redirect(url_for("login"))
-
     return render_template('home.html', posts=get_blogs())
 
 
 @app.route("/about")
 def about():
-    # if session.get("id") is None:
-    #     return redirect(url_for("login"))
     return render_template('about.html', title='About')
 
 
@@ -62,8 +73,7 @@ def like():
     if session.get("name"):
         return render_template('like.html', posts=like_blogs())
     else:
-        form = LoginForm()
-        return render_template('login.html', title='Login', form=form)
+        return redirect(url_for("login"))
 
 
 @app.route("/fav")
@@ -71,60 +81,73 @@ def fav():
     if session.get("name"):
         return render_template('favourites.html', posts=fav_blogs())
     else:
-        form = LoginForm()
-        return render_template('login.html', title='Login', form=form)
+        return redirect(url_for("login"))
+
 
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        user_name = form.username.data
-        user_email = form.email.data
-        user_pass = form.password.data
-        hashed_password = hash_user_pass.get_password_hash(user_pass)
-        resp = requests.post(f"{api_link}/register/name/{user_name}/email/{user_email}/password/{hashed_password}")
-        message = resp.text
-        flash(f'Your account has been created now you can log in', 'info')
-        return redirect(url_for('login'))
-    return render_template('register.html', title='Register', form=form)
+    if session.get("email"):
+        form = RegistrationForm()
+        if form.validate_on_submit():
+            user_name = form.username.data
+            resp = requests.post(f"{api_link}/register/name/{user_name}/email/{session['email']}")
+            user_profile = requests.get(f"{api_link}/login/email/{session['email']}").json()
+            session["id"] = user_profile["user_id"]
+            session["name"] = user_profile["user_name"]
+            message = resp.text
+            flash(f'Your account has been created successfully!!', 'info')
+            return redirect(url_for('home'))
+        return render_template('register.html', title='Register', form=form)
+    else:
+        return redirect(url_for("login"))
 
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
-    form = LoginForm()
-    if session.get("name"):
-        return redirect(url_for("home"))
-    elif form.validate_on_submit():
-        user_email = form.email.data
-        user_details = requests.get(f"{api_link}/login/email/{user_email}").json()
-        user_pass = form.password.data
-        hashed_password = hash_user_pass.get_password_hash(user_pass)
+    authorization_url, state = flow.authorization_url()
+    session["state"] = state
+    return redirect(authorization_url)
 
-        if user_details['user_res'] == "Not Found":
-            flash("User doesn't exist please register yourself first !!", 'danger')
-            return redirect(url_for('register'))
-        elif user_details['user_res'] == "Found" and user_details['user_pass'] == hashed_password:
-            if form.remember.data is True:
-                app.config["SESSION_PERMANENT"] = True
-            else:
-                app.permanent_session_lifetime = timedelta(weeks=3)
+@app.route("/callback")
+def callback():
+    flow.fetch_token(authorization_response=request.url)
 
-            session["id"] = user_details["user_id"]
-            session["name"] = user_details["user_name"]
-            session["email"] = user_details["user_email"]
+    if not session["state"] == request.args["state"]:
+        abort(500)  # State does not match!
 
-            flash('You have logged in!', 'success')
-            return redirect(url_for('home'))
-        flash('Login Unsuccessful. Please check email and password', 'danger')
-    return render_template('login.html', title='Login', form=form)
+    credentials = flow.credentials
+    request_session = requests.session()
+    cached_session = cachecontrol.CacheControl(request_session)
+    token_request = google.auth.transport.requests.Request(session=cached_session)
+
+    id_info = id_token.verify_oauth2_token(
+        id_token=credentials._id_token,
+        request=token_request,
+        audience=GOOGLE_CLIENT_ID,
+        clock_skew_in_seconds = 1
+    )
+    user_details = requests.get(f"{api_link}/login/email/{id_info.get('email')}").json()
+
+    if user_details['user_res'] == "Found":
+        session["email"] = user_details["user_email"]
+        session["name"] = user_details["user_name"]
+        session["id"] = user_details["user_id"]
+        app.permanent_session_lifetime = timedelta(weeks=3)
+        flash('You have logged in!', 'success')
+        return redirect(url_for('home'))
+    else:
+        print(id_info.get('email'))
+        session['email'] = id_info.get('email')
+        return redirect(url_for("register"))
 
 
 @app.route("/logout")
 def logout():
     session.pop('name', None)
     session.pop('email', None)
-    session.pop('id', None)
+    session.pop('user_id', None)
+    session.clear()
     return redirect(url_for("home"))
 
 
@@ -155,10 +178,6 @@ def account():
                 user_name = form.username.data
                 resp = requests.post(f"{api_link}/update/name/{user_name}/id/{session['id']}").text
                 session["name"] = user_name
-            if form.email.data != session["email"]:
-                user_email = form.email.data
-                resp = requests.post(f"{api_link}/update/email/{user_email}/id/{session['id']}").text
-                session["name"] = user_email
             flash('Your account has been updated!', 'info')
             return redirect(url_for('account'))
         elif request.method == 'GET':
@@ -171,49 +190,6 @@ def account():
                                image_file=image_file, form=form)
     else:
         return redirect(url_for('home'))
-
-
-def send_reset_email(user_id, user_email):
-    token = User_Token.get_reset_token(user_id)
-    msg = Message('Password Reset Request',
-                  sender='no.reply.yakshblog@gmail.com',
-                  recipients=[user_email])
-    msg.body = f'''To reset your password, visit the following link:
-{url_for('reset_token', token=token, _external=True)}
-
-If you did not make this request then simply ignore this email and no changes will be made.
-'''
-    mail.send(msg)
-
-
-@app.route("/reset_password", methods=['GET', 'POST'])
-def reset_request():
-    form = RequestResetForm()
-    if form.validate_on_submit():
-        user_email = form.email.data
-        user_detail = requests.get(f"{api_link}/id/email/{user_email}").json()
-        send_reset_email(user_detail["user_id"], user_email)
-        flash('An email has been sent with instructions to reset your password.', 'info')
-        return redirect(url_for('login'))
-    return render_template('reset_request.html', title='Reset Password', form=form)
-
-
-@app.route("/reset_password/<token>", methods=['GET', 'POST'])
-def reset_token(token):
-    user = User_Token.verify_reset_token(token)
-    if user is None:
-        flash('That is an invalid or expired token', 'warning')
-        return redirect(url_for('reset_request'))
-    form = ResetPasswordForm()
-    if form.validate_on_submit():
-        user_pass = form.password.data
-        hashed_password = hash_user_pass.get_password_hash(user_pass)
-        res = requests.post(f'{api_link}/update/user/id/{user["user_id"]}/password/{hashed_password}').text
-        print("Password Updated")
-        flash('Your password has been updated! You are now able to log in', 'info')
-        return redirect(url_for('login'))
-    return render_template('reset_token.html', title='Reset Password', form=form)
-
 
 @app.route("/recommend", methods=['GET', 'POST'])
 def recommend():

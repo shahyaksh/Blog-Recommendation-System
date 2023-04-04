@@ -182,7 +182,7 @@ a:hover {
   color: #0076bd;
 }
 .blue .postcard__author:hover {
-  color: red;
+  color: rgb(133,117,221);
 }
 .blue .postcard__bar {
   background-color: #0076bd;
