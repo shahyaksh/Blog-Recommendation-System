@@ -29,23 +29,18 @@ def pre_process_text(text, flg_stemm=False, flg_lemm=True, lst_stopwords=None):
     return text
 
 def get_similar_blog(blogs:dict,ratings:dict):
-    blogs_df=pd.DataFrame(blogs)
-    blogs_df['clean_blog_content'] = blogs_df['content'].apply(
-                                    lambda x: pre_process_text(x,flg_lemm=True,lst_stopwords=lst_stopwords))
-
+    blogs_df=pd.read_csv('D:/BVM/Sem 6 Work/Mini Project/BlogAPI/Recommend_Blogs/blog_data.csv')
     count_vec = CountVectorizer()
     similarity_matrix = count_vec.fit_transform(blogs_df['clean_blog_content'])
     cosine_sim = cosine_similarity(similarity_matrix)
-
     ratings_df = pd.DataFrame(ratings)
     blogs_to_consider = ratings_df[ratings_df['rating'] == 5]['blog_id']
     high_rated_blogs = blogs_to_consider.values
     rated_blogs = blogs_df[blogs_df['blog_id'].isin(high_rated_blogs)]
     recommended_blogs = []
-    recommended_blogs = []
     for blog_id in high_rated_blogs:
         temp_id = blogs_df[blogs_df['blog_id'] == blog_id].index.values[0]
-        temp_blog_id = blogs_df[cosine_sim[temp_id] > 0.3]['blog_id'].index.values
+        temp_blog_id = blogs_df[cosine_sim[temp_id] > 0.5]['blog_id'].index.values
         for b_id in temp_blog_id:
             if b_id not in recommended_blogs:
                 recommended_blogs.append(b_id)
