@@ -10,6 +10,8 @@ from nltk.stem import WordNetLemmatizer
 from nltk.stem import PorterStemmer
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+import os
+import pathlib
 
 lst_stopwords=corpus.stopwords.words('english')
 def pre_process_text(text, flg_stemm=False, flg_lemm=True, lst_stopwords=None):
@@ -29,7 +31,8 @@ def pre_process_text(text, flg_stemm=False, flg_lemm=True, lst_stopwords=None):
     return text
 
 def get_similar_blog(blogs:dict,ratings:dict):
-    blogs_df=pd.read_csv('D:/BVM/Sem 6 Work/Mini Project/BlogAPI/Recommend_Blogs/blog_data.csv')
+    data_file = os.path.join(pathlib.Path(__file__).parent, "blog_data.csv")
+    blogs_df=pd.read_csv(data_file)
     count_vec = CountVectorizer()
     similarity_matrix = count_vec.fit_transform(blogs_df['clean_blog_content'])
     cosine_sim = cosine_similarity(similarity_matrix)
@@ -40,11 +43,8 @@ def get_similar_blog(blogs:dict,ratings:dict):
     recommended_blogs = []
     for blog_id in high_rated_blogs:
         temp_id = blogs_df[blogs_df['blog_id'] == blog_id].index.values[0]
-        temp_blog_id = blogs_df[cosine_sim[temp_id] > 0.5]['blog_id'].index.values
+        temp_blog_id = blogs_df[cosine_sim[temp_id] > 0.4]['blog_id'].index.values
         for b_id in temp_blog_id:
             if b_id not in recommended_blogs:
                 recommended_blogs.append(b_id)
     return recommended_blogs
-
-
-
