@@ -155,11 +155,11 @@ def get_blogs_for_recommendation(recommended_blogs:tuple):
 async def root():
     return {"message": "Welcome to the Blog API Created by Yaksh Shah"}
 
-@app.post('/register/name/{user_name}/email/{user_email}/password/{user_password}')
-async def register_user(user_name:str,user_email:str,user_password:str):
-    user_query = ''' insert into user_profile(user_name,user_email,user_password,user_pic)
-                        values(%s,%s,%s,%s) '''
-    user_info = (user_name,user_email,user_password,'default_profile_pic.jpg')
+@app.post('/register/name/{user_name}/email/{user_email}')
+async def register_user(user_name:str,user_email:str):
+    user_query = ''' insert into user_profile(user_name,user_email,user_pic)
+                        values(%s,%s,%s) '''
+    user_info = (user_name,user_email,'default_profile_pic.jpg')
     # execute the query
     cursor.execute(user_query, user_info)
     mydb.commit()
@@ -167,12 +167,12 @@ async def register_user(user_name:str,user_email:str,user_password:str):
 
 @app.get('/login/email/{user_email}')
 async def user_login(user_email:str):
-    cursor.execute(''' select user_id,user_name,user_email,user_password from user_profile 
+    cursor.execute(''' select user_id,user_name,user_email from user_profile 
                                     where user_email=%s''',
                    [user_email])
     resp = cursor.fetchone()
     if resp is not None:
-        user_details={'user_id':resp[0],'user_name':resp[1],'user_email':resp[2],'user_pass':resp[3],"user_res":"Found"}
+        user_details={'user_id':resp[0],'user_name':resp[1],'user_email':resp[2],"user_res":"Found"}
         update_user_rating(user_details['user_id'])
         return user_details
     else:
@@ -186,14 +186,6 @@ async def update_user_name(user_name:str,user_id:int):
     mydb.commit()
     return "User Name Updated"
 
-@app.post('/update/email/{user_email}/id/{user_id}')
-async def update_user_email(user_email:str,user_id:int):
-    cursor.execute(""" update user_profile set user_email=%s where user_id=%s""",
-                   [user_email, user_id])
-    # execute the query
-    mydb.commit()
-    return "User Email Updated"
-
 @app.post('/update/image/{user_pic}/id/{user_id}')
 async def update_user_profile_pic(user_pic:str,user_id:int):
     cursor.execute(""" update user_profile set user_pic=%s where user_id=%s""",
@@ -201,16 +193,6 @@ async def update_user_profile_pic(user_pic:str,user_id:int):
     # execute the query
     mydb.commit()
     return "User Profile Pic Updated"
-
-
-@app.post('/update/user/id/{user_id}/password/{user_pass}')
-async def update_user_account_password(user_pass:str,user_id:int):
-    cursor.execute(""" update user_profile set user_password=%s where user_id=%s""",
-                   [user_pass, user_id])
-    # execute the query
-    mydb.commit()
-    return "User Account Password Updated"
-
 
 @app.get('/name/{user_name}')
 async def verify_user_name(user_name:str):
@@ -223,19 +205,6 @@ async def verify_user_name(user_name:str):
         return "not unique"
     return result
 
-
-@app.get('/email/{user_email}')
-async def verify_user_email(user_email:str):
-    cursor.execute(''' SELECT user_email from user_profile 
-                                    where user_email=%s''', [user_email])
-    result = cursor.fetchone()
-    if result:
-        return "not unique"
-    else:
-        return "unique"
-    return result
-
-
 @app.get('/image/id/{user_id}')
 async def get_user_profile_pic(user_id:int):
     cursor.execute(""" select user_pic from user_profile where user_id=%s""", [user_id])
@@ -243,23 +212,10 @@ async def get_user_profile_pic(user_id:int):
     user_img = {"user_img":resp[0]}
     return user_img
 
-@app.get('/id/email/{user_email}')
-async def get_user_id_by_user_email(user_email:str):
-    cursor.execute(""" select user_id from user_profile where user_email=%s""", [user_email])
-    resp = cursor.fetchone()
-    user_detail = {"user_id":resp[0]}
-    return user_detail
-
-@app.get('/user/details/id/{user_id}')
-async def get_user_details(user_id:int):
-    cursor.execute(""" select * from user_profile where user_id=%s""", [user_id])
-    resp = cursor.fetchone()
-    user_details = {"user_id":resp[0],"user_name":resp[1],"user_email":resp[2]}
-    return user_details
-
 @app.get('/blogs')
 async def get_blogs_for_home_before_login():
-    cursor.execute(f""" select * from blogs where blog_id order by rand() limit 30""")
+    cursor.execute(f""" select * from blogs where blog_id in(select blog_id from ratings where rating=5)
+                        order by rand() limit 30""")
     blogs_list = cursor.fetchall()
     blog_json = get_blogs_in_json_format(blogs_list)
     return blog_json
