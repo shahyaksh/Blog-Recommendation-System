@@ -1,33 +1,9 @@
-from fastapi import FastAPI, HTTPException, status, Response
-from fastapi.middleware.cors import CORSMiddleware
-import mysql.connector as SqlConnector
 import time
 from datetime import datetime
 from pytz import timezone
+from app import app, mydb, cursor
 from Recommend_Blogs import Using_Cosine_Similarity
 
-while True:
-    try:
-        mydb = SqlConnector.connect(host="blog-recommedation-system.cu9zz7jlsnla.ap-south-1.rds.amazonaws.com",
-                                    user="yaksh",
-                                    password="Yaksh_170802", database="blog_recommendation_system")
-        cursor = mydb.cursor()
-        print("Connection to Database Successful")
-        break
-    except Exception as error:
-        print("Connection to Database Failed")
-        print("Error:", error)
-        time.sleep(2)
-
-app = FastAPI()
-origins = ["*"]
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 def get_like_counts(blog_id:int):
     cursor.execute(""" select * from likes where blog_id=%s""",[blog_id])
