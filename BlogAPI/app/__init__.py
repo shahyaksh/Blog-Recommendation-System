@@ -3,8 +3,10 @@ from fastapi.middleware.cors import CORSMiddleware
 import mysql.connector as SqlConnector
 import pandas as pd
 import time
+import os
 from datetime import datetime
 from pytz import timezone
+
 
 while True:
     try:
@@ -28,11 +30,16 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-cursor.execute("select count(*) from blogs")
-count = cursor.fetchone()
-blog_data = pd.read_csv('D:/BVM/Sem 6 Work/Mini Project/BlogAPI/Recommend_Blogs/blog_data.csv')
-if count[0] > len(blog_data.values):
-    cursor.execute('select blog_id,blog_content,topic from blogs where blog_id > %s', [len(blog_data.values)])
+
+# This logic checks whether new blogs are added to the database if yes then it will add those blogs to the csv file
+cursor.execute("select max(blog_id) from blogs")
+max_id = cursor.fetchone()
+data_file = os.path.abspath("Recommend_Blogs/blog_data.csv")
+blog_data = pd.read_csv(data_file)
+last_blog_id=blog_data['blog_id'].iloc[-1]
+
+if max_id[0] > last_blog_id:
+    cursor.execute('select blog_id,blog_content,topic from blogs where blog_id > %s', [last_blog_id])
     blogs_list = cursor.fetchall()
     blogs_json = get_blogs_in_json_format(blogs_list, True)
     blog_data_2 = pd.DataFrame(blogs_json)
@@ -40,7 +47,7 @@ if count[0] > len(blog_data.values):
     blog_data_2['clean_blog_content'] = blog_data_2['blog_content'].apply(
         lambda x: pre_process_text(x, flg_stemm=False, flg_lemm=True, lst_stopwords=None))
     blog_data = pd.concat([blog_data, blog_data_2], ignore_index=True)
-    blog_data.to_csv('D:/BVM/Sem 6 Work/Mini Project/BlogAPI/Recommend_Blogs/blog_data.csv', index=False)
+    blog_data.to_csv(data_file, index=False)
 
 def get_like_counts(blog_id:int):
     cursor.execute(""" select * from likes where blog_id=%s""",[blog_id])
