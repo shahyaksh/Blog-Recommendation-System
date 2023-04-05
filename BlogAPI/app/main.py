@@ -1,6 +1,3 @@
-import time
-from datetime import datetime
-from pytz import timezone
 from app import *
 from Recommend_Blogs import Using_Cosine_Similarity
 
