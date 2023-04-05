@@ -43,7 +43,7 @@ if max_id[0] > last_blog_id:
     blogs_list = cursor.fetchall()
     blogs_json = get_blogs_in_json_format(blogs_list, True)
     blog_data_2 = pd.DataFrame(blogs_json)
-    blog_data_2.columns = ['blog_id', 'content', 'topic', 'clean_blog_content']
+    blog_data_2.columns = ['blog_id', 'content', 'topic']
     blog_data_2['clean_blog_content'] = blog_data_2['blog_content'].apply(
         lambda x: pre_process_text(x, flg_stemm=False, flg_lemm=True, lst_stopwords=None))
     blog_data = pd.concat([blog_data, blog_data_2], ignore_index=True)
