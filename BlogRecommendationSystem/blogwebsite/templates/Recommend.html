@@ -163,7 +163,6 @@
   </script>
   {% extends "layout.html" %}
   {% block content %}
-  {% if posts != [] %}
   {% for post in posts %}
 
   <!-- <link rel="stylesheet" href="layout.css"> -->
@@ -198,9 +197,6 @@
     </div>
   </section>
   {% endfor %}
-  {% else %}
-  <h1>Sorry!! Nothing to Recommend for now</h1>
-  {% endif %}
   {% endblock content %}
 
 </body>

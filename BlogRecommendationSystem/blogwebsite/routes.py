@@ -125,7 +125,7 @@ def callback():
         id_token=credentials._id_token,
         request=token_request,
         audience=GOOGLE_CLIENT_ID,
-        clock_skew_in_seconds = 1
+        clock_skew_in_seconds = 2
     )
     user_details = requests.get(f"{api_link}/login/email/{id_info.get('email')}").json()
 
@@ -133,7 +133,7 @@ def callback():
         session["email"] = user_details["user_email"]
         session["name"] = user_details["user_name"]
         session["id"] = user_details["user_id"]
-        app.permanent_session_lifetime = timedelta(weeks=3)
+        app.permanent_session_lifetime = timedelta(days=1)
         flash('You have logged in!', 'success')
         return redirect(url_for('home'))
     else:
@@ -160,7 +160,6 @@ def save_picture(form_picture):
     i = Image.open(form_picture)
     i.thumbnail(output_size)
     i.save(picture_path)
-
     return picture_fn
 
 
@@ -195,6 +194,9 @@ def account():
 def recommend():
     if session.get("name"):
         recommeded_blogs = requests.get(f"{api_link}/recommend/similar/blogs/{session['id']}").json()
+        if recommeded_blogs==[]:
+            recommeded_blogs=requests.get(f"{api_link}/recommended/no/activity/blogs").json()
+            flash('This are the top blogs this week for you!', 'success')
         return render_template('Recommend.html', posts=recommeded_blogs)
     else:
         return redirect(url_for('home'))
