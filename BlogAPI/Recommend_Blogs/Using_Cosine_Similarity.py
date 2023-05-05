@@ -2,6 +2,7 @@ import pandas as pd
 import nltk
 import os
 import pathlib
+import re
 from nltk import corpus
 from nltk.stem import WordNetLemmatizer
 from nltk.stem import PorterStemmer

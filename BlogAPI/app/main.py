@@ -1,7 +1,6 @@
 from app import *
 from Recommend_Blogs import Using_Cosine_Similarity
 
-
 @app.get('/')
 async def root():
     return {"message": "Welcome to the Blog API Created by Yaksh Shah"}
@@ -65,8 +64,9 @@ async def get_user_profile_pic(user_id:int):
 
 @app.get('/blogs')
 async def get_blogs_for_home_before_login():
-    cursor.execute(f""" select * from blogs where blog_id in(select blog_id from ratings where rating=5)
-                        order by rand() limit 30""")
+    top_rated_blogs = ratings_df[ratings_df['ratings'] <= 3.5].value_counts().head(30000)
+    top_blog_ids = list(set([x[0] for x in top_rated_blogs.index]))
+    cursor.execute(f""" select * from blogs where blog_id in {tuple(top_blog_ids)} order by rand() limit 30""")
     blogs_list = cursor.fetchall()
     blog_json = get_blogs_in_json_format(blogs_list)
     return blog_json
@@ -82,6 +82,30 @@ async def get_blogs_for_home_after_login(user_id:int):
     blog_json = get_blogs_in_json_format(blogs_list)
     return blog_json
 
+@app.get('/recommended/no/activity/blogs')
+async def get_recommended_blogs_for_user_with_no_activity():
+    top_rated_blogs = ratings_df[ratings_df['ratings'] > 3.5].value_counts().head(30000)
+    top_blog_ids = list(set([x[0] for x in top_rated_blogs.index]))
+    cursor.execute(f""" select * from blogs where blog_id in {tuple(top_blog_ids)} order by rand() limit 20""")
+    blogs_list = cursor.fetchall()
+    blog_json = get_blogs_in_json_format(blogs_list)
+    return blog_json
+
+@app.get('/recommend/blogs/using/rbm/{user_id}')
+async def get_recommended_blogs_using_rbm(user_id:int):
+    # cursor.execute('select * from ratings where user_id=%s', [user_id])
+    # ratings_list = cursor.fetchall()
+    # ratings_json = get_user_ratings_in_json_format(ratings_list)
+    # if len(ratings_json) < 3:
+    #     return []
+    # else:
+    #     blogs_json=[]
+    #     recommended_blogs = Using_Cosine_Similarity.get_similar_blog(blogs_json,ratings_json)
+    #     recommended_blogs_json = get_blogs_for_recommendation(tuple(recommended_blogs))
+    #     return recommended_blogs_json
+    pass
+
+
 @app.get('/recommend/similar/blogs/{user_id}')
 async def get_recommended_blogs_using_cosine_similarity(user_id:int):
     cursor.execute('select * from ratings where user_id=%s', [user_id])
@@ -90,10 +114,8 @@ async def get_recommended_blogs_using_cosine_similarity(user_id:int):
     if len(ratings_json) < 3:
         return []
     else:
-
         blogs_json=[]
         recommended_blogs = Using_Cosine_Similarity.get_similar_blog(blogs_json,ratings_json)
-        print(recommended_blogs)
         recommended_blogs_json = get_blogs_for_recommendation(tuple(recommended_blogs))
         return recommended_blogs_json
 
