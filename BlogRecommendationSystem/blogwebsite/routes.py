@@ -193,8 +193,12 @@ def account():
 @app.route("/recommend", methods=['GET', 'POST'])
 def recommend():
     if session.get("name"):
-        recommeded_blogs = requests.get(f"{api_link}/recommend/similar/blogs/{session['id']}").json()
-        if recommeded_blogs==[]:
+        recommeded_similar_blogs = requests.get(f"{api_link}/recommend/similar/blogs/{session['id']}").json()
+        recommeded_blogs=[]
+        if recommeded_similar_blogs!=[]:
+            recommeded_blogs_by_collaborative_filtering = requests.get(f"{api_link}/recommend/blogs/using/rbm/{session['id']}").json()
+            recommeded_blogs = recommeded_similar_blogs + recommeded_blogs_by_collaborative_filtering
+        else:
             recommeded_blogs=requests.get(f"{api_link}/recommended/no/activity/blogs").json()
             flash('This are the top blogs this week for you!', 'success')
         return render_template('Recommend.html', posts=recommeded_blogs)

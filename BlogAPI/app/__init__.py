@@ -33,15 +33,29 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-def get_like_counts(blog_id:int):
-    cursor.execute(""" select * from likes where blog_id=%s""",[blog_id])
-    likes=cursor.fetchall()
+if os.path.basename(__file__)=='__init__.py':
+    rating_path=os.path.join(os.getcwd(), 'app/ratings/blog_ratings_V4.csv')
+else:
+    rating_path = os.path.join(os.path.abspath(os.path.join(os.getcwd(), os.pardir)), 'app/ratings/blog_ratings_V4.csv')
+
+ratings_df = pd.read_csv(rating_path)
+
+
+def get_like_counts(blog_id: int):
+    cursor.execute(""" select * from likes where blog_id=%s""", [blog_id])
+    likes = cursor.fetchall()
     counts = len(likes)
+    blog_list_df = ratings_df[ratings_df['blog_id'] == blog_id]
+    like_count = len(blog_list_df[blog_list_df['ratings'] == 1.5].values)
+    like_count += len(blog_list_df[blog_list_df['ratings'] == 2].values)
+    like_count += len(blog_list_df[blog_list_df['ratings'] == 5].values)
+    counts = counts + like_count
     return counts
 
-def get_blogs_in_json_format(blogs_list: list,for_recommendation:bool=False):
+
+def get_blogs_in_json_format(blogs_list: list, for_recommendation: bool = False):
     blog_json = []
-    if for_recommendation==True:
+    if for_recommendation == True:
         for blog in blogs_list:
             blog_dict = {
                 "blog_id": blog[0],
@@ -63,7 +77,7 @@ def get_blogs_in_json_format(blogs_list: list,for_recommendation:bool=False):
                 "content": blog[3],
                 "image": blog[5],
                 "topic": blog[6],
-                "like_count":get_like_counts(blog[0]),
+                "like_count": get_like_counts(blog[0]),
                 "scrape_time": blog[7]
 
             }
@@ -71,20 +85,20 @@ def get_blogs_in_json_format(blogs_list: list,for_recommendation:bool=False):
             blog_dict = {}
         return blog_json
 
-def get_blogs_not_to_consider(user_id:int):
 
+def get_blogs_not_to_consider(user_id: int):
     # get all blogs liked by the user
     cursor.execute("select blog_id from likes where user_id=%s", (user_id,))
     liked_blog_list = cursor.fetchall()
-    #get all blogs that are added to favourites by the user
+    # get all blogs that are added to favourites by the user
     cursor.execute("select blog_id from favourites where user_id=%s", (user_id,))
     favourites_blog_list = cursor.fetchall()
 
     blog_id_not_to_consider_list = []
     blog_id_not_to_consider_tuple = ()
-    #check for blogs which are liked or added to favourites by the user and form a tuple
+    # check for blogs which are liked or added to favourites by the user and form a tuple
     if liked_blog_list is None and favourites_blog_list is None:
-        blog_id_not_to_consider_tuple=None
+        blog_id_not_to_consider_tuple = None
     elif liked_blog_list is not None and favourites_blog_list is not None:
         for like_blog_id in liked_blog_list:
             blog_id_not_to_consider_list.append(like_blog_id[0])
@@ -102,7 +116,8 @@ def get_blogs_not_to_consider(user_id:int):
         blog_id_not_to_consider_tuple = tuple(blog_id_not_to_consider_list)
     return blog_id_not_to_consider_tuple
 
-def add_user_ratings(user_id:int,blog_id:int):
+
+def add_user_ratings(user_id: int, blog_id: int):
     cursor.execute("""select * from ratings where blog_id=%s and user_id=%s""", [blog_id, user_id])
     if cursor.fetchone():
         return "Already exist"
@@ -115,63 +130,67 @@ def add_user_ratings(user_id:int,blog_id:int):
         return "seen"
 
 
-def update_user_rating(user_id:int):
+def update_user_rating(user_id: int):
     curr_time = datetime.now(timezone("Asia/Kolkata")).strftime('%Y-%m-%d %H:%M:%S')
     datetime_obj = datetime.strptime(curr_time, '%Y-%m-%d %H:%M:%S')
 
     cursor.execute(""" update ratings set rating=%s,timestamp=%s where user_id=%s and blog_id in
                         (select * from (select likes.blog_id from likes inner join ratings on 
                         likes.user_id = ratings.user_id and likes.blog_id=ratings.blog_id) tb1tmp)""",
-                   [2,datetime_obj,user_id])
+                   [2, datetime_obj, user_id])
     mydb.commit()
 
     cursor.execute(""" update ratings set rating=%s,timestamp=%s where user_id=%s and blog_id in
                       (select * from (select favourites.blog_id from favourites inner join ratings on 
                     favourites.user_id = ratings.user_id and favourites.blog_id=ratings.blog_id) tb1tmp)""",
-                   [3.5,datetime_obj,user_id])
+                   [3.5, datetime_obj, user_id])
     mydb.commit()
 
     cursor.execute(""" update ratings set rating=%s,timestamp=%s where user_id=%s and blog_id in 
                         (select * from (select favourites.blog_id from favourites inner join likes on 
                         likes.user_id=favourites.user_id and likes.blog_id=favourites.blog_id)tb1tmp)""",
-                        [5,datetime_obj,user_id])
+                   [5, datetime_obj, user_id])
     mydb.commit()
-def get_user_ratings_in_json_format(ratings_list:list):
+
+
+def get_user_ratings_in_json_format(ratings_list: list):
     ratings_json = []
     for rating in ratings_list:
         rating_dict = {
-            "user_id": rating[0],
+            "userId": rating[0],
             "blog_id": rating[1],
-            "rating": rating[2],
+            "ratings": rating[2],
+            "timestamp": rating[3],
         }
         ratings_json.append(rating_dict)
         rating_dict = {}
     return ratings_json
 
-def get_blogs_for_recommendation(recommended_blogs:tuple):
+
+def get_blogs_for_recommendation(recommended_blogs: tuple):
     cursor.execute(f'select * from blogs where blog_id in {recommended_blogs}')
     blogs_list = cursor.fetchall()
     blogs_json = get_blogs_in_json_format(blogs_list)
     return blogs_json
 
-#Blog Ratings
-path = os.path.join(pathlib.Path(__file__).parent,('blog_ratings_V4.csv'))
-ratings_df = pd.read_csv(path)
-# This logic checks whether new blogs are added to the database if yes then it will add those blogs to the csv file
-cursor.execute("select max(blog_id) from blogs")
-max_id = cursor.fetchone()
-data_file = os.path.abspath("Recommend_Blogs/blog_data.csv")
-blog_data = pd.read_csv(data_file)
-last_blog_id=blog_data['blog_id'].iloc[-1]
 
-if max_id[0] > last_blog_id:
-    cursor.execute(f'select blog_id,blog_content,topic from blogs where blog_id > {last_blog_id}')
-    blogs_list = cursor.fetchall()
-    blogs_json = get_blogs_in_json_format(blogs_list, True)
-    blog_data_2 = pd.DataFrame(blogs_json)
-    blog_data_2.columns = ['blog_id', 'content', 'topic']
-    blog_data_2['clean_blog_content'] = blog_data_2['content'].apply(
-        lambda x: pre_process_text(x, flg_stemm=False, flg_lemm=True, lst_stopwords=None))
-    blog_data = pd.concat([blog_data, blog_data_2], ignore_index=True)
-    blog_data.to_csv(data_file, index=False)
+def on_start():
+    # Blog Ratings
+    # This logic checks whether new blogs are added to the database if yes then it will add those blogs to the csv file
+    cursor.execute("select max(blog_id) from blogs")
+    max_id = cursor.fetchone()
 
+    data_path = os.path.join(os.getcwd(),"Recommend_Blogs/BlogData/blog_data.csv")
+    blog_data = pd.read_csv(data_path)
+    last_blog_id = blog_data['blog_id'].iloc[-1]
+
+    if max_id[0] > last_blog_id:
+        cursor.execute(f'select blog_id,blog_content,topic from blogs where blog_id > {last_blog_id}')
+        blogs_list = cursor.fetchall()
+        blogs_json = get_blogs_in_json_format(blogs_list, True)
+        blog_data_2 = pd.DataFrame(blogs_json)
+        blog_data_2.columns = ['blog_id', 'content', 'topic']
+        blog_data_2['clean_blog_content'] = blog_data_2['content'].apply(
+            lambda x: pre_process_text(x, flg_stemm=False, flg_lemm=True, lst_stopwords=None))
+        blog_data = pd.concat([blog_data, blog_data_2], ignore_index=True)
+        blog_data.to_csv(data_path, index=False)

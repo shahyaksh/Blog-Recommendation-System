@@ -60,6 +60,12 @@
     .button_tag1 {
       margin-left: 450px;
     }
+    .img_like{
+      width: 800px;
+      height: 400px;
+      margin-top: 10px;
+      margin-left: 100px;
+    }
   </style>
 </head>
 
@@ -198,7 +204,9 @@
   </section>
   {% endfor %}
   {% else %}
-  <h1>Oops! you have no liked blog</h1>
+  <div class="img_like">
+   <img src="{{ url_for('static', filename='NotFound/' + 'like.png') }}">
+  </div>
   {% endif %}
   {% endblock content %}
 

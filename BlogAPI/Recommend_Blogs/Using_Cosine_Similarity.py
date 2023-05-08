@@ -28,7 +28,7 @@ def pre_process_text(text, flg_stemm=False, flg_lemm=True, lst_stopwords=None):
 
 def get_similar_blog(blogs:dict,ratings:dict):
     # Read the blog data
-    data_file = os.path.join(pathlib.Path(__file__).parent, "blog_data.csv")
+    data_file = os.path.join(pathlib.Path(__file__).parent, "BlogData/blog_data.csv")
     blogs_df=pd.read_csv(data_file)
 
     #vectorize the blog content
@@ -38,9 +38,10 @@ def get_similar_blog(blogs:dict,ratings:dict):
     similarity_matrix = count_vec.fit_transform(blogs_df['clean_blog_content'])
     cosine_sim = cosine_similarity(similarity_matrix)
 
-    #get the blogs that are rated 5 by the user
+    #get the blogs that are seen by the user
     ratings_df = pd.DataFrame(ratings)
-    blogs_to_consider = ratings_df[ratings_df['rating'] == 5]['blog_id']
+    ratings_df.drop(columns=['timestamp'], inplace=True)
+    blogs_to_consider = ratings_df[ratings_df['ratings'] >= 0.5]['blog_id']
     high_rated_blogs = blogs_to_consider.values
     rated_blogs = blogs_df[blogs_df['blog_id'].isin(high_rated_blogs)]
     
@@ -48,7 +49,7 @@ def get_similar_blog(blogs:dict,ratings:dict):
     recommended_blogs = []
     for blog_id in high_rated_blogs:
         temp_id = blogs_df[blogs_df['blog_id'] == blog_id].index.values[0]
-        temp_blog_id = blogs_df[cosine_sim[temp_id] > 0.4]['blog_id'].index.values
+        temp_blog_id = blogs_df[cosine_sim[temp_id] > 0.5]['blog_id'].index.values
         for b_id in temp_blog_id:
             if b_id not in recommended_blogs:
                 recommended_blogs.append(b_id)

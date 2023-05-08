@@ -59,6 +59,12 @@
     .button_tag1 {
       margin-left: 450px;
     }
+    .img_fav{
+      width: 800px;
+      height: 400px;
+      margin-top: 10px;
+      margin-left: 100px;
+    }
   </style>
 </head>
 
@@ -196,7 +202,9 @@
   </section>
   {% endfor %}
   {% else %}
-  <h1>Oops!! You haven't added any blogs to your favourites list</h1>
+  <div class="img_fav">
+  <img src="{{ url_for('static', filename='NotFound/' + 'fav.png') }}">
+</div>
   {% endif %}
   {% endblock content %}
 
