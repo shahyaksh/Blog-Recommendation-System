@@ -64,7 +64,7 @@ This project is a Blog Recommendation System that utilizes collaborative and con
 For detailed API endpoints and usage instructions, please refer to the [TechTonicAPI README](https://github.com/shahyaksh/TechTonicAPI).
 
 # Demo
-Check out the demo of the full recommendation system up and running [here](https://drive.google.com/file/d/1gp9mbT0DiPKgu88i6PUTAf2LhLs_bRVj/view?usp=drive_link)
+Check out the demo of the full recommendation system running [here](https://drive.google.com/file/d/1gp9mbT0DiPKgu88i6PUTAf2LhLs_bRVj/view?usp=drive_link)
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
