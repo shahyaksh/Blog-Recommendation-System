@@ -36,7 +36,7 @@ This project is a Blog Recommendation System that utilizes collaborative and con
 ## Execution Steps
 
 1. **Collect Blogs**  
-   Use the Medium Web Scraper to collect blogs from Medium. Navigate to the Medium Web Scraper directory and run the following command:
+   Use the [Medium Web Scraper](https://github.com/shahyaksh/MediumWebscrapper) to collect blogs from Medium. Navigate to the Medium Web Scraper directory and run the following command:
 
    ```bash
    streamlit run app.py
